@@ -1,0 +1,6 @@
+/*!
+ * mzui - v1.0.0 - 2015-10-28
+ * Copyright (c) 2015 cnezsoft.com; Licensed MIT
+ */
+
+.thread.card{padding:0}.thread .card-heading{position:relative;padding-top:10px;background-color:#ebf2f9}.thread .card-heading.with-icon{padding-left:48px}.thread .card-heading.with-icon>.icon{position:absolute;top:10px;left:10px;font-size:28px;color:#3280fc}.thread .card-heading>h4{margin-bottom:8px;color:#3280fc}.thread .card-heading .level-number,.thread .card-heading .reply-time{color:#3280fc}.thread .card-content{padding-top:8px}.thread .card-footer{padding-top:8px;color:gray;background-color:#f1f1f1}.thread+.btn.block{margin-bottom:15px}.cards>.reply:nth-child(odd) .card-heading{background-color:#f7ebe1}.cards>.reply:nth-child(odd) .level-number,.cards>.reply:nth-child(odd) .reply-time{color:#bd7b46}.card.comment .reply{margin-top:8px;font-size:12px;background-color:#ebf2f9;border:none;border-radius:2px}.card.comment .reply .reply{background-color:rgba(50,128,252,.08)}.card.comment .replies{padding:0 10px 10px}.card.comment .replies>.reply:first-child{margin-top:0}.card.reply .card-heading{padding-bottom:10px}.card.reply .card-heading>.pull-right{position:relative;top:-1px}.card.reply .replies{padding:0;margin-left:10px}.counter{display:inline-block;padding:2px 4px}.counter .title{font-size:20px}.counter .caption{font-size:12px}

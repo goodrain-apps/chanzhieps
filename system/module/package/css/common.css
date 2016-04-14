@@ -1,0 +1,3 @@
+.alert-link:hover {text-decoration: underline;}
+.alert {width: 100%; display: table;}
+.modal .alert {word-break:break-all;}

@@ -1,0 +1,32 @@
+.thread{position: relative;}
+.thread .table{table-layout: fixed;}
+.thread .panel-heading > i{display: inline-block;font-size: 30px;margin-right: 10px;}
+.thread .panel-actions{margin-top: 10px;}
+.thread.reply .panel-actions{margin-top: 0;margin-right: 0;}
+.thread .panel-actions .label{font-size: 14px;}
+
+.speaker{width: 180px; border-right:1px solid #ddd; padding: 10px 15px !important;}
+.thread-author{display: block; padding: 5px 0; border-bottom: 1px dashed #ddd;margin-bottom: 10px;}
+.thread-content{padding: 5px;}
+.thread .article-files{border-top:1px dashed #ddd; margin: 0 -8px -2px; padding: 10px 15px; background: none}
+.thread .article-files-heading{margin-bottom: 0;}
+
+.table > tbody > tr > td.thread-wrapper{padding-bottom: 37px;}
+.thread-foot{position: absolute;bottom: 0;left: 180px;right:0;padding: 8px;border-top: 1px solid #ddd;}
+.thread-actions > a,.thread-more-actions > .dropdown > a, .thread-more-actions > a{display: inline-block; margin-left: 10px; }
+.thread-actions .caret{border-bottom: 4px solid #999; }
+
+.pager{display: block; margin: -5px 0 5px;}
+
+#replyForm .file-form .form-group{margin-left: -15px; margin-right: -15px; }
+
+.thread.panel{border-color:#bed0e3; box-shadow:0 1px 1px #bed0e3}
+.thread .panel-heading{background-color: #EBF2F9;color: #31708F;background-image: -moz-linear-gradient(#f1f8ff, #e1f0ff); background-image: -webkit-linear-gradient(#f1f8ff, #e1f0ff); background-image: linear-gradient(#f1f8ff, #e1f0ff); background-repeat: repeat-x;border-color:#bed0e3;}
+.thread.panel.striped{border-color:#d7c9ad; box-shadow:0 1px 1px #d7c9ad}
+.thread.striped .panel-heading{background-color:#FCF8E3;color: #8A6D3B;background-image: -moz-linear-gradient(#fdfaeb, #f5f0d3); background-image: -webkit-linear-gradient(#fdfaeb, #f5f0d3); background-image: linear-gradient(#fdfaeb, #f5f0d3); background-repeat: repeat-x;border-color:#d7c9ad;}
+
+#replyForm .control-label{margin-bottom: 0; margin-top: 0; padding-top: 7px; padding-right: 0;}
+
+@media (max-width: 767px) {.speaker,.thread-wrapper {display: block; width: 100%} .table > tbody > tr > td.thread-wrapper {padding-bottom: 47px;} td.speaker {border-bottom: 1px dashed #ddd; position: relative; padding: 8px 15px; border-right: 0} .speaker > ul {display: block; position: absolute; right: 15px; top: 10px;} .speaker .thread-author {border: none; margin-bottom: 0; padding: 0;} .speaker > ul > li {display: inline-block; margin-left: 5px; font-size: 12px; color: #666} .speaker > ul > li:nth-child(2) {display: none} .speaker > ul > li > small {color: #808080; font-weight: bold;} .thread-foot {left: 0}}
+@media (max-width: 480px) {.speaker > ul > li:nth-child(1) {display: none}}
+@media (max-width: 400px) {.speaker > ul {display: none}}

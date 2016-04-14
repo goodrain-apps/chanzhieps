@@ -1,0 +1,15 @@
+#reg .panel{width: 80%; margin: 5% auto;max-width: 450px;}
+#reg .panel-body{min-height: 230px;}
+#reg .panel-heading{background-color: transparent;}
+
+.btn-oauth{text-align: left; padding-left: 130px; font-size: 24px; line-height: 50px; position: relative; text-shadow: 0 1px 0 rgba(0,0,0,0.5); color: #333; background-color: #FCFCFC; border: 1px solid #DEDEDE;}
+.btn-oauth:hover{color: #333; background-color: #E8E8E8; border-color: #ccc; -moz-box-shadow: 0 2px 1px rgba(0,0,0,0.1); -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1); box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);}
+.btn-oauth .icon{font-size: 40px; position: absolute; left: 75px; text-shadow:none;}
+.btn-oauth .icon:before{display: none;}
+
+a .icon-qq, a .icon-sina, a .icon-wechat, a .icon-yangcong{ margin-bottom: -15px; display: inline-block; width: 48px; height: 48px; margin-right: 10px; background: url('theme/default/default/images/main/socialicons.png') left top no-repeat;}
+a .icon-sina{background-position: 0 -48px;}
+a .icon-wechat{background-position: 0 -96px;}
+a .icon-yangcong{background-position: 0 -144px;}
+
+@media (max-width: 767px) {#reg.panel {margin: 20px auto;width: 100%;} #reg .panel-heading {padding: 0 0 10px 0;} #reg .panel-body {padding: 10px 0; min-height: inherit;} .btn-oauth {padding-left: 80px;} .btn-oauth .icon {left: 20px;}}

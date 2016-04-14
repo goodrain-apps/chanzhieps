@@ -1,0 +1,17 @@
+.panel{margin: 0 5%;}
+.carousel {border-radius: 0}
+.carousel-inner .item, .carousel-inner .item > img {max-height: 150px; border-radius: 4px 4px 0 0;}
+.carousel-inner .item.show, .carousel-inner .item.show > img {max-height: inherit; border-radius: 4px; box-shadow: none}
+.carousel-inner .item .actions {position: absolute; top: 0; left: 0; right: 0; padding: 10px; background-color: #eee; background-color: rgba(255,255,255,0.1); z-index: 12; transition: all 0.3s; opacity: 0.5;}
+.carousel-inner .item:hover .actions {background-color: rgba(255,255,255,0.6); opacity: 1}
+.carousel-inner .item .btn-pure {padding: 0; height: 32px; min-width: 32px; font-size: 14px; font-weight: normal; display: inline-block; line-height: 32px}
+a.btn-sm{margin-bottom:5px;padding:5px;}
+.leftmenu.affix{top: 100px;}
+.leftmenu .tree li a.active{font-weight: bold;}
+
+.table{margin-bottom: 0;}
+.table td:last-child{border-bottom: none;}
+.item.active{height: 140px; text-align: center;}
+.carousel-inner>.item>img {min-height: none; max-height: none;max-width: 1000px;}
+.mainbutton{text-align: right; padding-bottom:5px;}
+.btn.btn-primary.return{background-color: orange; border-style: none;}

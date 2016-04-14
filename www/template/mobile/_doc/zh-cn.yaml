@@ -1,0 +1,15 @@
+name:移动设备模板
+parser:default
+code:mobile
+type:template
+author:蝉知官方
+desc:这是蝉知企业门户系统默认的移动设备模板
+version:1.0
+chanzhiVersion:4.5.2
+charge:free
+device:,mobile,
+license:http://www.chanzhi.org/book/chanzhieps/58_license.html
+themes:
+   default:默认
+   colorful:缤纷
+   blank:空白

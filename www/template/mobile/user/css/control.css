@@ -1,0 +1,5 @@
+.m-user-control .user-control-nav {margin-top: 0;}
+.m-user-control .user-control-nav > li > a > [class*='icon-'] {font-size: 42px; display: block; text-align: center; line-height: 80px;}
+.m-user-control .user-control-nav > li > a > .icon-chevron-right {display: none}
+.m-user-control .user-control-nav > li {width: 33.3333333333%; margin: 0; padding: 0 5px 10px;}
+.m-user-control .user-control-nav > li > a { width: 100%;}

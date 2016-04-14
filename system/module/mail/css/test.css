@@ -1,0 +1,9 @@
+.panel-notice {margin: 15px;}
+#result {
+    padding: 15px;
+    color: #cb7700;
+    background-color: #fff4e5;
+    border: 1px solid #ffe1cc;
+}
+div .f-right{font-weight:normal; color:red; padding-left: 5px;}
+#to{display: inline;}

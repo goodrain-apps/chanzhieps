@@ -1,0 +1,21 @@
+ul.navList{padding-left: 0;}
+.navList li {list-style: none; border: 1px dotted #DDDDDD; padding: 8px; padding-left: 5px; border-right: none; border-top: none;}
+.grade2{margin-left: 30px;}
+.grade2 li:last-child{border-bottom: none;}
+.grade3{margin-left: 60px;}
+.grade3 li:last-child{border-bottom: none;}
+i{cursor: pointer;}
+label{font-weight:500;font-size:13px;}
+
+.navList .form-control { width: auto; min-width: 100px; max-width: 200px; }
+.panel-body > form { max-width: 10000px; }
+.navList .icon-circle, .navList .icon-folder-open-alt, .navList .icon-folder-close, .navList .icon-arrow-up, .navList .icon-arrow-down { margin-right: 6px; opacity: 0.6; transition:all 0.3s; }
+.navList li:hover .icon-folder-open-alt,.navList li:hover .icon-folder-close,.navList li:hover .icon-arrow-up,.navList li:hover .icon-arrow-down { opacity: 1; }
+.navList .icon-arrow-up,.navList .icon-arrow-down { color: #384D7A; }
+.navList .icon-folder-close {opacity: 0.8;}
+.navList .icon-circle {font-size: 12px;}
+.navList .urlInput{width:360px; max-width: 360px;}
+
+#navList .sort-handle {cursor: move;}
+#navList li.dragging {opacity: 0.35; background-color: #FFF4E5;}
+#navList li.drag-shadow {border: 1px solid #ddd; box-shadow:0 1px 8px rgba(0,0,0,.15); background-color: #fff; z-index: 9999}

@@ -1,0 +1,52 @@
+.color-tile {display: block; float: left; width: 30px; height: 30px; border-radius: 4px; border: 1px solid #ccc; margin: 2px 2px 0 0; cursor: pointer; transition: all 0.4s; text-align: center; line-height: 30px;}
+.color-tile[data="transparent"] {background-color: #eee; background-image: linear-gradient(45deg, #999 25%, transparent 25%, transparent 75%, #999 75%, #999),
+linear-gradient(45deg, #999 25%, transparent 25%, transparent 75%, #999 75%, #999); background-size:12px 12px; background-position:0 0, 6px 6px}
+.color-tile:hover, .color-tile.active {border-color: #333; box-shadow: 0 1px 4px rgba(0,0,0,0.5)}
+.colorplate {float: left; width: 100%;}
+.colorplate .input-group-btn {width: 50%}
+.colorplate .input-group-btn > .btn {width: 100%; border-right: none}
+.color .icon-ok, .color .icon-question {display: none}
+.color.active > .icon-ok, .color.error > .icon-question, .color.active .input-group-btn > .dropdown-toggle > .icon-ok, .color.error .input-group-btn > .dropdown-toggle > .icon-question {display: inline;}
+.color.active.error .icon-ok {display: none}
+.color .input-group-addon {min-width: 40px; text-align: center;}
+.color .btn{text-shadow: none;}
+
+.dropdown-menu.colors {padding: 5px; width: 205px}
+
+.input-group-addon + .input-group-addon.fix-border {border-left: 1px solid #ccc}
+
+#customThemeForm caption {text-align: left; padding: 4px 15px 3px; background: #f5f5f5; border-bottom: 1px solid #e5e5e5}
+#customThemeForm .form-footer {padding: 10px 15px 10px 107px;}
+#customThemeForm[data-tab='cssTab'] .form-footer, #customThemeForm[data-tab='jsTab'] .form-footer {padding-left: 0;}
+#customThemeForm .table-form {margin-bottom: 0;}
+#customThemeForm .table-form tr > th {width: 100px; vertical-align: top; line-height: 32px}
+#customThemeForm .table-form tr > td {padding-bottom: 0; padding-top: 0;}
+#customThemeForm .table-form tr > td .row > div {margin: 6px 0;}
+#customThemeForm .table-form tr > td .input-group-btn {line-height: 32px}
+
+#customLess-editor {min-height: 300px}
+#lessVarTableWrapper {overflow-y: auto; position: relative; padding-top: 31px;}
+#lessVarTableHead {position: absolute; width: 100%; left: 0; top: 0; right: 0}
+
+.modal.modal-fullscreen .modal-dialog {width: 100%!important; border-radius: 0; margin-top: 0!important; margin-bottom: 0;}
+
+#cssview {height: 100%;}
+.codeeditor-fullscreen .table-form {display: none}
+
+#resetTheme {color: #D2322D}
+#resetTheme:hover {color: #A82824}
+
+#cssTab, #jsTab {position: relative;}
+#cssTab .text-tip, #jsTab .text-tip {position: absolute; left: 150px; bottom: -47px}
+
+#mainPanel .panel-heading {padding: 4px 5px 0 5px}
+#mainPanel .nav-tabs {margin-bottom: -1px}
+#mainPanel .nav-tabs > li > a {padding: 5px 10px 8px}
+#mainPanel .nav-tabs > li > a.active, #mainPanel .nav-tabs > li > a.focus {outline: none;}
+#mainPanel .nav-tabs > li.active > a {padding: 6px 10px 7px; color: #333; font-weight: bold;}
+
+body.codeeditor-fullscreen .form-footer {position: fixed; left: 20px; bottom: -5px; z-index: 1010}
+body.codeeditor-fullscreen #cssTab .text-tip, body.codeeditor-fullscreen #jsTab .text-tip {position: fixed; left: 120px; bottom: 0; z-index: 1010}
+.editor-wrapper.fullscreen {z-index: 10}
+
+body.body-modal-ve .panel-heading {display: block}

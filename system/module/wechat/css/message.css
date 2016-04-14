@@ -1,0 +1,21 @@
+.alert {padding: 8px; margin:0;  border:none; }
+#recordsBox{max-height:400px; display:block; overflow: auto; color:#333; border-top: 1px solid #ddd}
+#recordsBox td{font-size:12px;}
+tr.reply label, tr.reply span{color:#34789a;}
+#recordsBox td span{font-size:14px;}
+
+.panel-body>.comments-list {margin: -15px -15px 0;}
+.comment{padding: 8px 10px; transition: all 0.5s; border: none; border-top: 1px solid #ddd;}
+.comment>.content>.author {margin-bottom: 5px;}
+.comment>.content>.text {padding-top: 0;}
+.comment>.content>.actions {padding-top: 6px;}
+.comment .text-muted {color: #aaa}
+.comment:hover {background-color: #fafafa;}
+.comment.comment-reply {background-color: #f1f1f1; margin: 0 10px 10px 40px; border: 1px solid #ddd; border-radius: 4px}
+
+.small .icon-time {font-size: 14px;}
+
+form {margin-bottom: 0;}
+#replyBox {margin-top: 10px; position: relative;}
+#replyBox .btn {position: absolute; right: 10px; top: 10px}
+#replyBox .form-control {padding-right: 80px;}

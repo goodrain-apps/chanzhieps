@@ -1,0 +1,2 @@
+#resultBox li{list-style-type: none; font-size: 15px;}
+#resultBox{overflow-y: auto; max-height: 600px;}

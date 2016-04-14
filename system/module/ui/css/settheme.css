@@ -1,0 +1,23 @@
+#themes.cards {margin: 0}
+#themes .card-wrapper {width: 452px; float: left; margin: 0 10px}
+#themes .card { position: relative; transition:all 0.3s; filter:alpha(opacity=60); -moz-opacity:0.6; opacity:0.6;margin-bottom: 8px;}
+#themes .card:hover,#themes .card.current{filter:alpha(opacity=100); -moz-opacity:1; opacity:1;}
+#themes .card img { height: 120px; transition: all .15s ease-out; margin: 0 auto; max-width: 100%; max-height: 100%}
+#themes .name{margin-bottom: 20px; font-weight: bold; text-align: center;}
+
+#themes .card .icon-ok { display: none; position: absolute; bottom: 0; right: 0; color: transparent; padding: 7px 15px; font-size: 20px; transition:all 0.3s; z-index: 10; border-top-left-radius:100px;}
+#themes .card.current {border-color: #47A447; -moz-box-shadow:0px 0px 12px #47A447; -webkit-box-shadow:0px 0px 12px #47A447; box-shadow:0px 0px 12px #47A447;}
+#themes .card.current .icon-ok { display: block; background-color: #47A447; color: #fff; }
+#themes .card .msg { position: absolute; width: 100%; background-color: #47A447; color: #fff; bottom: 0; left: 0; right: 57px; height: 40px; padding: 0 15px; z-index: 5; line-height: 40px; display: none; }
+#themes .card .actions {display: none; position: absolute; top: 36px; left: 0; right: 0; z-index: 999; text-align: center; width: 100%;}
+#themes .card.current .actions {display: block; filter:alpha(opacity=0); -moz-opacity:0; opacity:0;}
+#themes .card.current:hover .actions {transition: all .15s ease-out; filter:alpha(opacity=100); -moz-opacity:1; opacity:1;}
+#themes .card.current:hover img {-webkit-filter: blur(5px);-moz-filter: blur(5px);-ms-filter: blur(5px);-o-filter: blur(5px);filter: blur(5px);filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=15, MakeShadow=false);}
+
+.color-tile {display: block; float: left; width: 34px; height: 34px; border-radius: 4px; border: 1px solid #ccc; margin: 2px 4px 2px 0; cursor: pointer; transition: all 0.4s; text-align: center; line-height: 32px;}
+.color-tile:hover, .color-tile.active {border-color: #333; box-shadow: 0 1px 4px rgba(0,0,0,0.5)}
+.input-group.color {width: 200px; margin: 2px 4px 2px 0;}
+.color .icon-ok, .color .icon-question {display: none}
+.color.active .icon-ok, .color.error .icon-question {display: inline;}
+.color.active.error .icon-ok {display: none}
+.color .input-group-addon {min-width: 40px; text-align: center;}

@@ -1,0 +1,30 @@
+/* books */
+.books {position: relative;}
+.books dl { margin:0 0 0 25px; line-height: 20px; }
+.books .article { padding: 0; border: none; box-shadow: none; margin: 0}
+.book,.chapter,.books .article { line-height: 30px; padding: 3px 0; transition: all 0.3s; border-radius: 4px}
+.book:before { content: '\e62a'; font-family: ZenIcon; display: inline-block; margin-right: 10px; font-weight: normal; font-size: 14px; width: 30px; height: 30px; color: #999; text-align: center; border: 1px solid #e1e1e1; border-radius: 15px; }
+.book > strong,.chapter > strong,.books .article > strong { font-size: 16px; display: inline-block; }
+.chapter > strong,.books .article > strong { font-size: 14px; }
+.books .article > strong { font-weight: normal; }
+.books .actions { display: inline-block; margin-left: 20px;}
+.books .actions a { color: #999; font-weight: normal; }
+.book:hover .actions a,.chapter:hover .actions a,.books .article:hover .actions a { color: #506EAF; }
+.chapter, .books .article { line-height: 20px; }
+.chapter .order,.books .article .order { display: inline-block; margin-right: 0; height: 20px; line-height: 20px; padding: 0 6px; text-align: center; border-radius: 5px; transition: all 0.3s;  }
+.books dd:hover .order,.book:hover:before{border-color: #999}
+i.icon-arrow-up, i.icon-arrow-down{cursor:pointer}
+
+.catalog.chapter.dragging, .catalog.article.dragging {opacity: 0.25; background-color: #FFF4E5; border: 1px solid #fff}
+.catalog.chapter.drag-shadow, .catalog.article.drag-shadow {background: #fff; border: 1px solid #ddd; box-shadow:0 1px 8px rgba(0,0,0,.15);}
+.sort {cursor: move;}
+.catalog {position: relative;}
+.catalog.drop-to {background: none;}
+.catalog.drop-to:before {display: block; background-color: #E48600; content: ' '; height: 1px; width: 100%; position: absolute; top: -1px}
+.catalog.dragging .catalog.drop-to:before, .catalog.drop-to.dragging:before {display: none}
+.catalog-empty {display: none; padding: 0; height: 10px; line-height: 5px!important}
+dl.drop-area {background-color: #f1f1f1}
+dl.drop-area .catalog-empty {display: block;}
+.books > .catalog > .actions > .sort-handle {display: none}
+
+.leftmenu.affix{max-height: 80%; overflow-y:auto;}

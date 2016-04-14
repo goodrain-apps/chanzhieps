@@ -1,0 +1,26 @@
+#visualPanel {border-bottom: 1px solid #ddd; box-shadow: 0 1px 5px rgba(0,0,0,.124); background-color: #fafafa;}
+#visualPanel .nav > li > a.text-danger {color: red}
+
+#visualExitBtn {position: absolute; right: 15px; top: 9px}
+
+#visualPageWrapper {display: block; position: fixed; top: 40px; left: 0; right: 0; bottom: 0;}
+
+.nav-main {margin-left: -10px}
+
+#menu {margin: 0 auto; border-bottom: none; height: auto;}
+#menu .nav > li {padding: 0}
+#menu .nav > li > a {padding: 10px}
+#menu > .pull-right {margin-right: 0;}
+#menu .nav > li.nav-item-primary, #menu .nav > li.divider.angle {background-color: #fafafa;}
+#menu .nav > li.nav-item-primary + li.divider.angle:after, #menu .nav > li.divider.angle:after {border-left-color: #fafafa}
+
+#menu .menu-templates {display: none}
+#menu .menu-template-name, #menu .menu-template-name + .icon {display: none!important}
+#menu .theme-picker-toolbar {background-color: #eee}
+#menu .theme-picker-toolbar > .nav > li > a:hover {background-color: #fafafa; color: #145ccd}
+
+#visualPage {transition: width .2s;}
+.ve-device-mobile {background-color: #aaa}
+.ve-device-mobile #visualPage {width: 600px!important; margin: 0 auto; display: block;}
+
+

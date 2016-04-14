@@ -1,0 +1,3 @@
+.w-max-200px{max-width:200px; overflow:hidden;}
+@media (max-width: 480px) { .hidden-xxs {display: none} .page {font-size: 12px}}
+@media (max-width: 400px) { .hidden-xxxs {display: none}}

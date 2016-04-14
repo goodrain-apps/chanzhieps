@@ -1,0 +1,4 @@
+.article > .article-content { padding-top: 0; }
+.article-content > .content { max-width: 900px; }
+.nav-content { float: right; background-color: #fafafa; border: 1px solid #e5e5e5; margin: 0 0 20px 20px; border-radius: 4px; padding: 10px 0; }
+.nav-content > li > a { padding:5px 20px; text-shadow: #FFF 0px 1px 0px; }

@@ -1,0 +1,7 @@
+.display-name .panel-heading, .display-desc .panel-heading, .display-content .panel-heading,
+.display-name tr > th, .display-desc tr > th, .display-content tr > th,
+.display-name [data-row], .display-desc [data-row], .display-content [data-row]
+ {display: none}
+.display-name [data-row='name'],
+.display-desc [data-row='desc'],
+.display-content [data-row='content'] {display: table-row}

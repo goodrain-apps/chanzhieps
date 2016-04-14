@@ -1,0 +1,3 @@
+.icon-sina:before, .icon-qq:before {display: none}
+.icon-sina, .icon-qq {display: inline-block; background: url(template/default/theme/default/images/main/socialicons.png) 24px -18px; width: 16px; height: 17px; position: relative; top: 2px}
+.icon-qq {background-position: 24px 0px;}

@@ -1,0 +1,76 @@
+#!/usr/bin/env php
+<?php
+/**
+ * The cli router file of xirangeps.
+ *
+ * @copyright   Copyright 2009-2015 青岛易软天创网络科技有限公司(QingDao Nature Easy Soft Network Technology Co,LTD, www.cnezsoft.com)
+ * @license     ZPLV1.2 (http://zpl.pub/page/zplv12.html)
+ * @author      Chunsheng Wang <chunsheng@cnezsoft.com>
+ * @package     chanzhiEPS
+ * @version     $Id$
+ * @link        http://www.chanzhi.org
+ */
+error_reporting(E_ALL ^ E_NOTICE ^ E_STRICT);
+define('RUN_MODE', 'shell');
+define('LANG_CREATED', false);
+date_default_timezone_set('Asia/Shanghai');
+
+/* Judge the args. */
+if($argc != 2) die('Usage: ' . basename(__FILE__) . " <request>\n");
+
+/* Parse the request into params. */
+$request = parse_url(trim($argv[1]));
+$_SERVER['HTTP_HOST'] = $request['host'];
+$_SERVER['SERVER_ADDR'] = getenv('SERVER_ADDR');
+$_SERVER['SCRIPT_FILENAME'] = dirname(dirname(dirname(__FILE__))) . '/www/index.php' ;
+
+/* Load the framework. */
+chdir(dirname(dirname(__FILE__)));
+include './framework/router.class.php';
+include './framework/control.class.php';
+include './framework/model.class.php';
+include './framework/helper.class.php';
+include './framework/seo.class.php';
+include './config/config.php';
+    
+/* Set the PATH_INFO variable. */
+if($config->requestType == 'PATH_INFO')
+{
+    $path = pathinfo($request['path']);
+
+    /* url like http://www.chanzhi.org/article-browse.html, PATH_INFO is 'article-browse.html'. */
+    if(strpos($path['basename'], $config->requestFix))
+    {
+        $_SERVER['PATH_INFO'] = $path['basename'];
+    }
+    else 
+    {
+        /* url like http://www.chanzhi.org/xirang/article/, PATH_INFO is 'article'. */
+        if(is_dir('./module/' . $path['basename']))
+        {
+            $_SERVER['PATH_INFO'] = $path['basename'];
+        }
+        /* url like http://www.chanzhi.org/xirang/, PATH_INFO is '/'. */
+        else
+        {
+            $_SERVER['PATH_INFO'] = '/';
+        }
+    }
+    $_SERVER['REQUEST_URI'] = $path['basename'];
+}
+else
+{
+    parse_str($request['query'], $_GET);
+    $_SERVER['SCRIPT_NAME'] = $_SERVER['HTTP_HOST'] . 'index.php';
+    $_SERVER['REQUEST_URI'] = isset($request['query']) ? $request['query'] : '';
+}
+
+/* Get systemRoot. */
+$systemRoot = dirname(dirname(__FILE__)); 
+
+/* Instance the app and run it. */
+$app = router::createApp('xirang', $systemRoot);
+
+$common = $app->loadCommon();
+$app->parseRequest();
+$app->loadModule();

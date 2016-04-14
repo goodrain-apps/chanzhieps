@@ -1,0 +1,11 @@
+.box h4.title
+{
+  font-size: 24px;
+  background-color: #fff;
+  margin: 10px 15px;
+  padding: 10px;
+  height: inherit;
+  text-align: center;
+}
+.article > header > h1 {margin-bottom: 0; margin-top: 10px; font-size: 18px;}
+.article > .article-content {padding-top: 10px; padding-bottom: 10px;}

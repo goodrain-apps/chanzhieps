@@ -1,0 +1,6 @@
+/*treeview*/
+.treeview .hitarea {position: absolute; left: 15px; top: 10px; background-color: #fff; cursor: pointer;}
+.treeview > li > .hitarea {left: 0px; top: 0px;}
+.treeview .hitarea:before {color: #999; content: '\e710'; font-family: ZenIcon; transition:all 0.3s;}
+.treeview li:hover .hitarea:before {color: #2973EA;}
+.treeview .hitarea.collapsable-hitarea:before {content: '\e712';}

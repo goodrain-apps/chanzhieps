@@ -1,0 +1,8 @@
+.row-logo .col-md-6 .box{border: 1px solid #DDD; height:200px; text-align:center;}
+.row-logo .card{text-align:center;padding-top:30px; border:none; height:150px;}
+.row-logo .text-lg{line-height:90px;}
+.row-logo .card a, .row-logo .card .icon-spin{line-height:80px;}
+.row-logo img.logo{height:80px;}
+.row-logo img.favicon{max-height:64px;}
+.row-logo .actions{position:absolute; right:20px;top:10px;}
+.row-logo .text-important{margin:0 auto;}

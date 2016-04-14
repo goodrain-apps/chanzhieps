@@ -1,0 +1,7 @@
+#check .panel{width: 500px;margin: 30px auto;border: none;}
+#check .panel-heading{background-color: transparent;}
+#check .panel-body {padding: 30px;}
+#check .panel-body table{width: 100%;}
+#check .panel-body td,#reg .panel-body th{padding: 5px 10px;}
+#check .panel-body th{text-align: right;}
+#check .text-box,#submit{width: 90%;}

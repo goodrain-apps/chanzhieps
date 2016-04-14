@@ -1,0 +1,52 @@
+.table.table-form th, .table.table-form td{padding: 6px 10px 6px 6px;}
+.color-tile {display: block; float: left; width: 30px; height: 30px; border-radius: 4px; border: 1px solid #ccc; margin: 2px 2px 0 0; cursor: pointer; transition: all 0.4s; text-align: center; line-height: 30px;}
+.color-tile:hover, .color-tile.active {border-color: #333; box-shadow: 0 1px 4px rgba(0,0,0,0.5)}
+.colorplate {float: left; width: 100%;}
+.colorplate .input-group-btn {width: 60%}
+.colorplate .input-group-btn > .btn {width: 100%; border-right: none}
+.color .icon-ok, .color .icon-question {display: none}
+.color.active > .icon-ok, .color.error > .icon-question, .color.active .input-group-btn > .dropdown-toggle > .icon-ok, .color.error .input-group-btn > .dropdown-toggle > .icon-question {display: inline;}
+.color.active.error .icon-ok {display: none}
+.color .input-group-addon {min-width: 40px; text-align: center;}
+.color .btn{text-shadow: none;}
+
+.input-group-addon + .input-group-addon.fix-border{border-left: 1px solid #ccc;}
+
+.dropdown-menu.colors {padding: 5px; width: 205px}
+
+#ajaxForm {position: relative;}
+.panel-preview {background-color: #f5f5f5; border-radius: 6px; padding: 12px 20px;}
+.panel-preview > .heading {margin-bottom: 10px;}
+.panel-preview > .heading > .pull-right {position: relative; top: -3px}
+.panel-preview > .heading > .pull-right > .btn {padding: 2px 10px}
+.panel-preview > .panel {margin-bottom: 0;width: 100%; margin: 0 auto; line-height: 20px;}
+.form-footer {padding-left: 105px; margin-top: 5px;}
+.blockForm[data-tab='cssTab'] .form-footer, .blockForm[data-tab='jsTab'] .form-footer {padding-left: 0;}
+.blockForm[data-tab='cssTab'] .tab-content, .blockForm[data-tab='jsTab'] .tab-content {width: 100%;}
+.blockForm[data-tab='cssTab'] #panelPreview, .blockForm[data-tab='jsTab'] #panelPreview {display:none;}
+.blockForm > .panel > .panel-heading {padding: 4px 5px 0 5px}
+.blockForm .nav-heading {margin-top: -3px; color: #333}
+.blockForm .nav-tabs {margin-bottom: -1px}
+.blockForm .nav-tabs > li > a {padding: 5px 10px 8px}
+.blockForm .nav-tabs > li > a.active, #mainPanel .nav-tabs > li > a.focus {outline: none;}
+.blockForm .nav-tabs > li.active > a {padding: 6px 10px 7px; color: #333; font-weight: bold;}
+#titleTDCell > .required-wrapper {width: 50%;}
+
+.table-row {display: table; width: 100%; margin: 0 -10px;}
+.table-cell {display: table-cell; vertical-align: top; float: none}
+.table-cell.tab-content {min-width: 698px}
+
+#dialogPanelPreivew.panel-preview {margin-bottom: 10px; padding: 10px 20px 15px 20px;}
+#dialogPanelPreivew.panel-preview > .panel {max-width: 500px}
+
+.block-types-menu {width:800px;}
+.block-types-menu > li {float:left; }
+.block-types-menu > li dl { width:160px; margin: 0 10px;text-align:center;}
+.block-types-menu > li dl dt { padding:5px; border-bottom: 1px solid #DDD; text-align:center; margin-bottom: 5px;}
+.block-types-menu > li dl dd > a {display: block; padding: 8px; border-radius:5px;}
+.block-types-menu > li dl dd.active > a,
+.block-types-menu > li dl dd > a:hover {background:#F3F3F3; color: #333}
+.block-types-menu > li dl dd.active > a:hover,
+.block-types-menu > li dl dd.active > a {color:#145CCD;}
+
+.layout-group{width:60%}

@@ -1,0 +1,16 @@
+name:默認模板
+parser:default
+code:default
+author:蟬知官方
+desc:這是蟬知默認模板
+version:4.5.2
+chanzhiVersion:4.5.2
+charge:free
+device:,desktop,
+license:http://www.chanzhi.org/book/chanzhieps/58_license.html
+themes:
+   default:默認
+   tartan:蟬之格
+   clean:清晰
+   wide:寬屏
+   blank:寬屏

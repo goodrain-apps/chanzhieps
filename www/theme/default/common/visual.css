@@ -1,0 +1,135 @@
+/* Tooltip */
+.tooltip{position:absolute;z-index:1030;display:block;font-size:12px;line-height:1.4;visibility:visible;filter:alpha(opacity=0);opacity:0}.tooltip.in{filter:alpha(opacity=100);opacity:1}.tooltip.top{padding:5px 0;margin-top:-3px}.tooltip.right{padding:0 5px;margin-left:3px}.tooltip.bottom{padding:5px 0;margin-top:3px}.tooltip.left{padding:0 5px;margin-left:-3px}.tooltip-inner{max-width:200px;padding:3px 8px;color:#fff;text-align:center;text-decoration:none;background-color:#353535;border-radius:4px}.tooltip-arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid}.tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-width:5px 5px 0;border-top-color:#353535}.tooltip.top-left .tooltip-arrow{bottom:0;left:5px;border-width:5px 5px 0;border-top-color:#353535}.tooltip.top-right .tooltip-arrow{right:5px;bottom:0;border-width:5px 5px 0;border-top-color:#353535}.tooltip.right .tooltip-arrow{top:50%;left:0;margin-top:-5px;border-width:5px 5px 5px 0;border-right-color:#353535}.tooltip.left .tooltip-arrow{top:50%;right:0;margin-top:-5px;border-width:5px 0 5px 5px;border-left-color:#353535}.tooltip.bottom .tooltip-arrow{top:0;left:50%;margin-left:-5px;border-width:0 5px 5px;border-bottom-color:#353535}.tooltip.bottom-left .tooltip-arrow{top:0;left:5px;border-width:0 5px 5px;border-bottom-color:#353535}.tooltip.bottom-right .tooltip-arrow{top:0;right:5px;border-width:0 5px 5px;border-bottom-color:#353535}
+
+/* Animations */
+@keyframes hightlight
+{
+  from {box-shadow: 0 0 12px rgba(71,164,71, 0.1);}
+  to {box-shadow: 0 0 18px rgba(26,128,26, 0.8),0 0 12px rgba(71,164,71, 0.5);}
+}
+
+@-moz-keyframes hightlight /* Firefox */
+{
+  from {-moz-box-shadow: 0 0 12px rgba(71,164,71, 0.1);}
+  to {-moz-box-shadow: 0 0 18px rgba(26,128,26, 0.8),0 0 12px rgba(71,164,71, 0.5);}
+}
+
+@-webkit-keyframes hightlight /* Safari and Chrome */
+{
+  from {-webkit-box-shadow: 0 0 12px rgba(71,164,71, 0.1);}
+  to {-webkit-box-shadow: 0 0 18px rgba(26,128,26, 0.8),0 0 12px rgba(71,164,71, 0.5);}
+}
+
+/* Visual editable area */
+.ve {position: relative; overflow: visible;}
+.ve-cover {pointer-events:none; cursor: pointer; position: absolute; left: 0; top: 0; right: 0; bottom: 0; border: 1px solid rgba(0, 255, 0, .2); z-index: 960; cursor: pointer; background: rgba(0, 255, 0, .1);}
+.ve-device-mobile .ve-cover {z-index: 110;}
+.ve:hover > .ve-cover, .ve.ve-editing > .ve-cover {animation: hightlight .8s alternate infinite ease-in-out; background: transparent; border: 1px solid #38b03f!important}
+
+.ve-heading {pointer-events:auto; background-color: #38b03f; background-color: rgba(56, 176, 63, 0.9); color: #fff; font-size: 13px; position: absolute; top: 0; padding: 0; z-index: 960; line-height: 20px; right: 0; transition: opacity .2s; opacity: 0; visibility: hidden; border-radius: 0 0 0 2px;}
+.ve-device-mobile .ve-heading {z-index: 112}
+.ve-heading:hover {background-color: rgba(56, 176, 63, 1);}
+.ve-name {display: inline-block; padding: 0 5px; text-shadow: 1px 1px 1px rgba(0,0,0,.1); font-weight: bold;}
+.ve-name .icon-move {display: none}
+.ve-name.ve-move-handler {cursor: move}
+.ve-name.ve-move-handler .icon-move {display: inline}
+.ve-actions {float: right; display: block; margin: 0; padding: 0;}
+.ve-actions > li {float: left; display: block; padding: 0 3px; min-width: 20px; text-align: center; cursor: pointer; margin-left: 1px; background-color: rgba(0,0,0,.2);}
+.ve-invisible {min-height: 22px}
+.ve-invisible .ve-cover {border: 1px dashed rgba(0, 255, 0, .4)}
+.ve-invisible .ve-heading {opacity: 1; visibility: visible; background: none; color: #38b03f; text-shadow: none;}
+.ve-invisible .ve-actions > li {background: none;}
+.ve-invisible:hover .ve-actions > li {background-color: rgba(0,0,0,.2);}
+.ve-actions > li:hover {background-color: rgba(0,0,0,.4)!important;}
+.ve-actions > li.ve-action-delete:hover {background-color: #b93015!important;}
+.ve:hover > .ve-cover .ve-heading, .ve.ve-editing > .ve-cover .ve-heading {opacity: 1; visibility: visible; background-color: #38b03f; background-color: rgba(56, 176, 63, 0.8); color: #fff;}
+
+.ve-resize-handler {position: absolute; left: -6px; top: 0; bottom: 0; z-index: 965; width: 12px; cursor: w-resize; border-radius: 4px; opacity: 0; transition: opacity .2s; pointer-events: auto}
+.ve-device-mobile .ve-resize-handler {z-index: 114;}
+.ve-resize-handler.left {display: none}
+.ve-resize-handler.right {right: -6px; left: auto; cursor: e-resize}
+.ve-resize-handler:hover, .ve.ve-editing-resize .ve-resize-handler {background-color: rgba(0, 255, 0, .2);}
+.ve-resize-handler > .icon {display: block; width: 20px; height: 20px; top: 50%; position: absolute; margin-top: -10px; line-height: 20px; text-align: center; background-color: rgba(0, 255, 0, .2); color: #38b03f; transition: left .2s, right .2s}
+.ve-resize-handler.left > .icon {left: 0}
+.ve-resize-handler.right > .icon {right: 0}
+.ve:hover > .ve-cover .ve-resize-handler, .ve.ve-editing-resize > .ve-cover .ve-resize-handler {opacity: 1}
+.ve:hover > .ve-cover .ve-resize-handler > .icon {background-color: rgba(0, 255, 0, .3);}
+.ve:hover > .ve-cover .ve-resize-handler.left > .icon {left: -4px}
+.ve:hover > .ve-cover .ve-resize-handler.right > .icon {right: -4px}
+
+.ve-resizing.col {transition: width .2s}
+
+.ve[data-ve='slogan'], .ve[data-ve='logo'] {min-width: 120px;}
+
+.block.ve {min-height: 22px; margin-bottom: 14px;}
+
+.btn-ve {border-radius: 2px; border: 2px solid #38b03f; color: #38b03f; background: #fff; text-shadow: none; font-size: 14px; display: block; width: 100%}
+.btn-ve:hover {background: #38b03f; color: #fff; text-shadow: none;}
+
+.ve-actions-bar {margin: 0 -5px}
+.ve-actions-bar > .nav {display: table; width: 100%;}
+.ve-actions-bar > .nav > li {display: table-cell; padding: 10px 5px;}
+.ve-device-mobile .ve-actions-bar {margin: 0 5px;}
+.ve-device-mobile .blocks .ve-actions-bar {margin: 0 -5px 10px;}
+
+.sortable-sorting .panel-block {border: none;}
+.sortable-sorting .ve-cover {background-color: rgba(255,255,255,.3); border-color: #ddd}
+.sortable-sorting .dragging .ve-cover {border: 2px dashed #38b03f; background-color: rgba(255,255,255,.8);}
+.sortable-sorting .drag-shadow {z-index: 1050; cursor: move;}
+.sortable-sorting .drag-shadow > * {z-index: 1050; opacity: .7}
+.sortable-sorting .drag-shadow > .ve-cover, .sortable-sorting .drag-shadow > .ve > .ve-cover {border: 2px solid #38b03f; background-color: transparent; box-shadow: 1px 5px 15px rgba(0,0,0,0.5)!important;}
+.sortable-sorting .drag-shadow.col-row > .row > .ve-cover {border: 2px solid #03b8cf!important;}
+.sortable-sorting .dragging.col-row > .row > .col .ve-cover {border-color: #ddd}
+.sortable-sorting .dragging.col-row > .row > .ve-cover {border: 2px dashed #03b8cf!important;}
+
+.ve-block-actions {position: relative; clear: both; margin-bottom: 14px;}
+.ve-block-actions.ve-actions-bar > .nav > li {display: table-cell; padding: 0 5px;}
+.ve-block-actions > .breadcrumb {pointer-events:none; position: absolute; top: 0; left: 6px; background-color: #F1A325; color: #fff; padding: 2px 5px; transition: top .2s, left .2s; border-radius: 0 0 4px 0}
+.ve-block-actions > .breadcrumb:after {display: none!important}
+.blocks.row .ve-block-actions.ve-actions-bar {margin: 0 2px 14px;}
+.blocks.sortable-sorting .ve-block-actions {display: none}
+
+.blocks:before, .ve-show-border:before {display: block; content: ' '; position: absolute; left: -7px; top: -7px; right: -7px; bottom: -7px; border: 2px dashed #F1A325; opacity: 0; transition: opacity .2s, transform .2s; pointer-events:none; z-index: 1999; transform: scale(.98)}
+.ve-device-mobile .blocks:before, .ve-device-mobile .ve-show-border:before {z-index: 117}
+.blocks {position: relative;}
+.ve-show-border.ve-show-border-in:before, .blocks.ve-show-border-in:before, .blocks.ve-editing:before, .blocks.sortable-sorting:before {opacity: 1; transform: scale(1)}
+.blocks.row:before {left: 0; right: 0; bottom: 7px;}
+.ve-show-border-in .ve-block-actions, .blocks.ve-editing .ve-block-actions , .blocks.sortable-sorting .ve-block-actions {position: static!important}
+.blocks.sortable-sorting .ve-block-actions > .breadcrumb, .ve-show-border-in .ve-block-actions > .breadcrumb, .blocks.ve-editing .ve-block-actions > .breadcrumb {background-color: #F1A325; color: #FFF; top: -7px; left: -7px;}
+.blocks.row.ve-editing .ve-block-actions > .breadcrumb, .blocks.row.ve-show-border-in .ve-block-actions > .breadcrumb, .ve-device-mobile .blocks.ve-show-border-in .ve-block-actions > .breadcrumb {left: 0;}
+
+.ve-device-mobile .blocks:before, .ve-device-mobile .ve-show-border:before {left: 0; right: 0}
+
+.blocks > .ve-block-actions .btn-ve {color: #F1A325; border-color: #F1A325}
+.blocks > .ve-block-actions .btn-ve:hover {color: #fff; background-color: #F1A325}
+.blocks .row > .ve-block-actions .btn-ve {color: #03b8cf; border-color: #03b8cf}
+.blocks .row > .ve-block-actions .btn-ve:hover {color: #fff; background-color: #03b8cf}
+
+.blocks.row > .col.col-row > .row.ve {margin: 0 0 14px; padding: 14px 7px 0;}
+.blocks.row > .col.col-row > .row.ve > .ve-cover {box-shadow: none; border: 1px dotted #03b8cf; background: none}
+.blocks.row > .col.col-row > .row.ve > .ve-cover > .ve-heading {background: #03b8cf; top: -2px; left: -2px; right: auto; border-radius: 0 0 2px 0;}
+.blocks.row > .col.col-row > .row.ve.ve-invisible > .ve-cover > .ve-heading {color: #fff;}
+.blocks.row > .col.col-row > .row.ve > .ve-cover > .ve-heading .ve-action-edit {display: none}
+.blocks.row > .col.col-row > .row.ve:hover > .ve-cover, .blocks.row > .col.col-row > .row.ve.ve-editing > .ve-cover {animation: none; box-shadow: none; border: 2px dashed #03b8cf!important;}
+.blocks.row > .col.col-row > .row.ve > .ve-cover .ve-resize-handler > .icon {background-color: rgba(3, 184, 207, 0.2); color: #03b8cf;}
+.blocks.row > .col.col-row > .row.ve.ve-editing-resize > .ve-cover .ve-resize-handler, .blocks.row > .col.col-row > .row.ve > .ve-cover .ve-resize-handler:hover {background-color: rgba(3, 184, 207, 0.2);}
+
+.carousel > .ve-actions-bar {position: absolute; right: 20px; bottom: 20px; z-index: 20}
+.carousel-inner > .item .ve-actions-bar {position: absolute; text-align: center; left: 0; right: 0; bottom: 0; padding: 20px; transition: background-color .2s; z-index: 15;}
+.carousel:hover .carousel-inner > .item .ve-actions-bar {background-color: #38b03f; }
+a.ve-btn-carousel, a.ve-btn-carousel:active, a.ve-btn-carousel:focus, a.ve-btn-carousel:visited, .ve-carousel-order {background-color: #38b03f; color: #fff; display: inline-block; min-width: 34px; width: 34px; height: 34px;  text-align: center; border-radius: 17px; border: rgba(255,255,255,.25) solid 2px; line-height: 30px;}
+.ve-btn-carousel + .ve-btn-carousel {margin-left: 10px;}
+.ve-btn-carousel:hover {background-color: #2c8931; color: #fff; border-color: rgba(255, 255, 255, .8)}
+.ve-btn-carousel.disabled, .ve-btn-carousel.disabled:hover {background-color: #38b03f; opacity: .3}
+.ve-btn-carousel > .icon {line-height: 30px;}
+.ve-carousel-order {font-size: 18px; margin: 0 10px; width: auto; padding-left: 10px; padding-right: 10px; border-style: dotted}
+
+body.ve-preview-in .ve-cover, body.ve-preview-hover .ve-cover, body.ve-preview-in .ve-preview-hidden, body.ve-preview-hover .ve-preview-hidden {display: none!important}
+body.ve-preview-in .block.ve, body.ve-preview-hover .block.ve {min-height: none; margin-bottom: auto;}
+body.ve-preview-in .blocks.row > .col.col-row > .row.ve, body.ve-preview-hover .blocks.row > .col.col-row > .row.ve {margin: 0 -7px; padding: 0;}
+
+#navbarCollapse .ve-heading, .ve-mode .site-slogan > .ve .ve-heading {right: auto; left: 0; border-radius: 0 0 2px 0}
+.site-logo > .ve {display: block}
+.site-name > h2 .ve-heading, .site-logo > .ve .ve-heading {left: 0; bottom: 0; top: auto; right: auto}
+.site-logo > a .ve-heading {top: auto; bottom: 0}
+.site-logo[data-ve='block'], nav[data-ve='block'], .site-logo[data-ve='block'] {display: block; width: 100%}

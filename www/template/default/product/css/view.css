@@ -1,0 +1,47 @@
+.product-image {text-align: center; max-height: 320px; overflow: hidden;}
+.product-image.media-wrapper {height: 300px; line-height: 300px; border: 1px solid #ddd; position: relative;}
+.product-image.media-wrapper img {transition: all .2s cubic-bezier(0.175,0.885,0.32,1); width: auto}
+.product-image > img {width: 100%;cursor:pointer; max-height: 100%;}
+.product-image.media-wrapper:hover {cursor: pointer;}
+.product-image.media-wrapper .image-zoom-region {position: absolute; width: 50%; height: 50%; background-color: rgba(0,0,0,.15); border: 2px solid #fff; top: 0; left: 0; border-color: rgba(255,255,255,0.5); display: none}
+.product-image.media-wrapper:hover .image-zoom-region {display: block;}
+.product-image-2x-wrapper {position: absolute; left: 100%; top: 0; width: 100%; z-index: 100; background-color: #fff; overflow: hidden; height: 300px; border: 1px solid #ddd; display: none}
+#productImageWrapper:hover .product-image-2x-wrapper {display: block; opacity: 0; transition: opacity .2s;}
+#productImageWrapper .product-image-2x-wrapper.show {opacity: 1;}
+.product-image-2x.product-image.media-wrapper {width: 200%; height: 600px; line-height: 600px; position: absolute; border: none; left: 0; top: 0; max-height: none}
+
+.product-image-menu-wrapper {overflow: hidden;}
+.product-image-menu-wrapper.scrollable {position: relative; padding-left: 26px; padding-right: 26px;}
+.product-image-menu-wrapper.scrollable:before, .product-image-menu-wrapper.scrollable:after {display: block; content: ' '; position: absolute; left: 20px; top: 5px; width: 6px; height: 50px; background-color: #fff; z-index: 11}
+.product-image-menu-wrapper.scrollable:after {left: auto; right: 20px;}
+.product-image-menu-wrapper .btn-img-scroller {display: none}
+.product-image-menu-wrapper.scrollable .btn-img-scroller {display: block; position: absolute; left: 0; top: 5px; z-index: 10; background-color: #fff; border: 1px solid #ddd; height: 50px; width: 20px; text-align: center; padding-left: 0; padding-right: 0; border-radius: 0;}
+.product-image-menu-wrapper.scrollable .btn-img-scroller.btn-next-img {right: 0; left: auto;}
+.product-image-menu-wrapper.scrollable .product-image-menu {position: relative; transition: left .2s; left: 0}
+
+.product-image-menu {margin: 5px -3px}
+.product-image-menu .product-image-wrapper {float: left; padding: 0 3px; overflow: auto;} 
+.product-image-menu .product-image {width: 50px; height: 50px; border: 1px solid #ddd; overflow: hidden; display: table-cell; vertical-align: middle;}
+.product-image-menu .product-image:hover {box-shadow: 0 0 4px rgba(0,0,0,0.25); opacity: 0.9; border-color: #bbb;}
+
+.product-property .meta-name {width: 100px; padding-right: 15px;}
+.btn-buy .btn {min-width: 120px;}
+.product-property, .product-image-menu {margin-bottom: 20px;}
+.product-property h1{font-size: 22px;}
+.product-property h1,.btn-buy {padding-left: 15px; padding-right: 15px;}
+@media (min-width: 992px){.product-property h1,.btn-buy {  padding-left: 0;   padding-right: 0;} .product-property.product-lack-img h1,.product-lack-img .btn-buy {padding-left: 15px;   padding-right: 15px;}}
+.article-content {padding:0; margin-bottom: 10px;}
+.product-property.product-lack-img h1{margin-top: 20px; padding-left: 0; padding-right: 0;}
+.article-files {margin: 0 -15px; padding: 10px 15px; background: none}
+
+.panel-body {position: relative;}
+.panel-body .back2top {position: absolute; bottom: 0; right: -30px; display: block; width: 30px; padding: 5px 8px; border:1px solid #ddd; border-radius: 0 4px 4px 0}
+.panel-body .back2top:hover {text-decoration: none; background-color: #E5E5E5}
+#buyBtnBox{margin-left:85px; font-weight:400;}
+.btn-buy {background:#f40; font-size:16px; padding:8px 16px; color:#FFF; cursor:pointer;}
+.btn-buy:hover, .btn-buy:visited {background:#f20; color:#FFF;}
+.btn-cart{background:#E43E41; font-size:16px; padding:8px 16px; color:#FFF; cursor:pointer;}
+.btn-cart:hover, .btn-cart:visited {background:#E41a41; color:#FFF;}
+.btn-soldout {background:#999; font-size:16px; padding:8px 16px; color:#FFF; cursor:pointer;}
+#countBox .input-group {width:120px;}
+#countBox .input-group span {cursor:pointer; background:inherit;}

@@ -1,0 +1,25 @@
+.panel-body {padding-bottom: 0;}
+.card {margin-bottom: 10px;}
+
+.card-slide {overflow: visible;}
+.card-heading{color: #808080; height: 37px; padding: 7px; position: relative}
+.plain-slide {height: 190px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); transition: box-shadow .2s;}
+.slides-holder {height: 200px; position: relative; background-color: #fff; margin: 0 auto;}
+.slide-item {width: auto; max-height: 170px; position: absolute; bottom: 10px; right: 10px; width: 100%; padding-left: 45px; padding-right: 5px; transition: bottom .2s, right .2s; overflow: hidden;}
+.slide-item img {max-height: 170px; max-width: 100%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); transition: box-shadow .2s;}
+.slide-item-1 img {width: 100%; max-height: none}
+.card:hover .slide-item img, .card:hover .plain-slide {box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);}
+.empty-holder{height: 190px; position: absolute; bottom: 0; width: 100%; text-align: center; background-color: #FBFBFF; color: #999;}
+.empty-holder > .icon {display: block; margin-top: 60px; margin-bottom: 10px;}
+.slides-count {position: absolute; opacity: .8; background-color: #000; background-color: rgba(0,0,0,.7); color: #fff; line-height: 24px; height: 24px; padding: 0 10px 0 20px; right: 5px; bottom: 0; z-index: 25; background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(246,246,246,0) 0%, rgba(0,0,0,0.69) 100%);background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(0%, rgba(246,246,246,0)), color-stop(100%, rgba(0,0,0,0.69)));background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(246,246,246,0) 0%, rgba(0,0,0,0.69) 100%);background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(246,246,246,0) 0%, rgba(0,0,0,0.69) 100%);background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(246,246,246,0) 0%, rgba(0,0,0,0.69) 100%);background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(246,246,246,0) 0%, rgba(0,0,0,0.69) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=1 );}
+.create-btn:hover,.empty-holder:hover {color: #347AEB;}
+#toBeAdded{font-size: 14px;}
+
+.group-name{color:#333;}
+#input{height: 22px;}
+#removeGroup{text-align: right;}
+
+.edit-form {position: absolute; top: 0; left: 0; background: #fff; padding: 0 15px 0 25px; display: none}
+.edit-form .input-group-btn.fix-border  .btn {border-radius: 0}
+.edit-form .input-group-btn + .input-group-btn .btn {border-radius: 0 3px 3px 0}
+.edit-form .input-group-btn {white-space: }

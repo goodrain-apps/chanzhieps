@@ -1,0 +1,15 @@
+name:Mobile
+parser:default
+code:mobile
+type:template
+author:Chanzhi
+desc:This is the default mobile template of chanzhieps.
+version:1.0
+chanzhiVersion:4.5.2
+charge:free
+device:,mobile,
+license:http://www.chanzhi.org/book/chanzhieps/58_license.html
+themes:
+   default:Default
+   colorful:Colorful
+   blank:Blank

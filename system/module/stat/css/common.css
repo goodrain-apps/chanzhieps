@@ -1,0 +1,40 @@
+.chart-canvas{margin:10px;}
+#switchBar {padding-top:10px;}
+#switchBar label{margin: 0 5px; font-weight:normal; cursor:pointer; color:blue;}
+#switchBar label.active{color:#333; font-weight:bold;}
+
+.table-report{ border:1px solid #ddd !important; }
+#reportData{ margin-top:10px;}
+#reportData thead tr td { font-weight:bold; background:#EFEFEF;}
+
+.lineTypeBar{ padding: 20px;}
+.panel-heading > a { display: inline-block; margin: -3px 3px; line-height: 26px;padding: 0 10px}
+.panel-heading > a.active { border-radius: 13px; background-color: #3280FC;color: #fff}
+.panel-heading .nav-tabs{border-bottom: none;}
+.panel-heading .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus
+{
+  background-color: transparent;
+  border-color: #ddd #ddd transparent;
+  font-weight: bold;
+  color: blue;
+  border-image: none;
+  border-style: solid;
+  cursor: default;
+}
+
+.panel-heading .nav-tabs > li > a, .nav-tabs > li > a:hover, .nav-tabs > li > a:focus{padding: 6px 15px;}
+
+.panel-body .table-bordered{border: 1px solid #DDD; border-bottom:none;}
+
+.table tr td.baidu{background:#FFF0D5;}
+.table tr td.bing{background:#DDF3F5;}
+.table tr td.google{background:#FFFFFF;}
+.table tr td.haosou{background:#FFFFFF;}
+.table tr td.sogou{background:#F5F5F5}
+.pd-l0{padding-left:0}
+
+#typeMenu {padding-right:20px;}
+#typeMenu li a{padding:5px;}
+#typeMenu li.active a{ background:none; color:blue; font-weight:bold;}
+
+.close { float: none; }

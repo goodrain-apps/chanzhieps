@@ -1,0 +1,2 @@
+#checkEmail {max-width: 450px; margin: 20px auto;}
+@media (max-width: 767px) {#checkEmail {margin: 10px auto;} #checkEmail .panel {margin: 20px auto; width: 100%;} #checkEmail .panel-heading {padding: 0 0 10px 0;} #checkEmail .panel-body {padding: 10px 0; min-height: inherit;} .panel-body > form {padding-right: 0;}}

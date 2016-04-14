@@ -1,0 +1,260 @@
+//vars
+@color-pale: mix(#fff, @color-primary, 90%);
+@color-inverse: contrast(@color-primary, #333, #fff, 60%);
+@color-inverse-dark: darken(@color-primary, 60%);
+@color-primary-text: contrast(@color-primary, @color-inverse-dark, @color-primary, 60%);
+
+.override-colorset(@color) when not(@color = #3280FC)
+{
+  // links
+  a {
+    &.primary, &.text-primary {
+      color: @color-primary-text;
+    }
+
+    &:hover,
+    &:focus {
+      color: lighten(@color-primary-text, 5%);
+    }
+  }
+
+
+  // type
+  .text-primary {color: @color-primary-text;}
+  .bg-primary {
+    background-color: @color-primary;
+    color: @color-inverse;
+  }
+  .bg-primary-pale {background-color: @color-pale;}
+
+
+  // button
+  .btn.primary {
+    background-color: @color-primary;
+    color: @color-inverse;
+  }
+  .btn.primary.active,.btn.primary.focus, .btn.primary:active, .btn.primary:focus, .btn.primary:hover, .open>.dropdown-toggle.btn.primary,
+  .btn.primary.active.focus, .btn.primary.active:focus, .btn.primary.active:hover, .btn.primary:active.focus, .btn.primary:active:focus, .btn.primary:active:hover, .open>.dropdown-toggle.btn.primary.focus, .open>.dropdown-toggle.btn.primary:focus, .open>.dropdown-toggle.btn.primary:hover {
+    background-color: darken(@color-primary, 5%);
+    color: @color-inverse;
+  }
+  .btn-link {
+    color: @color-primary-text;
+    &:hover,
+    &:focus {
+      color: @color-priamry-hover;
+      background-color: @color-pale;
+    }
+  }
+  .carousel-caption .btn.primary {background-color: rgba(0, 0, 0, 0.4); color: #fff;}
+
+
+  // menu user center
+  .menu-user-center {background-color: @color-pale;}
+
+
+  // appnav
+  .appnav {
+    .nav {
+      > li {
+        > a {
+          &.sub-open {
+            background-color: @color-pale;
+          }
+        }
+        &.active {
+          > a {
+            box-shadow: inset 0 -2px 0 @color-primary;
+          }
+        }
+      }
+    }
+
+    > .subnavs {
+      > .nav {
+        > li.active > a {
+          color: @color-primary;
+        }
+      }
+    }
+  }
+
+
+  // tread
+  .thread {
+    .card-heading {
+      background-color: @color-pale;
+
+      &.with-icon {
+        > .icon {
+          color: @color-primary-text;
+        }
+      }
+
+      > h4 {
+        color: @color-primary-text;
+      }
+
+      .level-number, .reply-time {
+        color: @color-primary-text;
+      }
+    }
+  }
+
+  .card.comment {
+    .reply {
+      background-color: @color-pale;
+
+      .reply {
+        background-color: fade(@color-primary, 8%);
+      }
+    }
+  }
+
+
+  // dropdown
+  .dropdown-menu > .active > a,
+  .dropdown-menu > .active > a:focus,
+  .dropdown-menu > .active > a:hover {
+    background-color: @color-pale;
+  }
+
+
+  // form control
+  .form-control {
+    @color-rgba: rgba(red(@color-primary), green(@color-primary), blue(@color-primary), .6);
+    &:focus {
+      border-color: @color-primary;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @color-rgba;
+    }
+  }
+
+  // user control nav
+  .nav.user-control-nav > li.active > a {
+    background-color: @color-pale;
+    color: @color-primary;
+    border-color: @color-primary;
+
+    > [class*='icon-'] {color: @color-primary}
+  }
+}
+
+.override-colorset(@color-primary);
+
+.appbar.fix-top {
+  background-color: @color-primary;
+  color: @color-inverse;
+  border-bottom-color: @color-primary;
+
+  a, a:hover, a:focus, a:active,
+  .btn, .btn:hover, .btn:focus, .btn:active,
+  .text-danger {
+    color: inherit;
+  }
+
+  .dropdown-menu {
+    color: #333;
+  }
+}
+
+.appbar.fix-bottom {
+  background-color: @color-pale;
+  border: none;
+}
+
+.appnav.fix-top {
+  background-color: @color-primary;
+  color: @color-inverse;
+  border-bottom-color: @color-primary;
+
+  .nav > li {
+    > a {
+      color: @color-inverse;
+      opacity: .8;
+      box-shadow: none;
+
+      &:hover, &.focus, &:active {
+        background-color: lighten(@color-primary, 8%);
+      }
+
+      &.sub-open {
+        &, &:hover, &.focus, &:active {
+          color: @color-primary-text;
+          background-color: @color-pale;
+        }
+      }
+    }
+
+    &.active > a {
+      opacity: 1;
+      background-color: fade(@color-inverse, 15%);
+      box-shadow: inset 0 -2px 0 fade(@color-inverse, 60%);
+
+      &.sub-open {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .subnavs {
+    background-color: @color-pale;
+    .nav > li {
+      > a {
+        color: #333;
+      }
+
+      &.active > a {
+        color: @color-primary-text;
+        box-shadow: inset 0 -2px 0 @color-primary-text;
+      }
+    }
+  }
+
+  body.with-appnav.with-appbar-top.scroll-down-in & {
+    background-color: fade(@color-primary, 87%);
+  }
+}
+
+.fix-appnav-shadow(@color-primary) when (lightness(@color-primary) >= 90%) {
+  .appnav.fix-top {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.175);
+  }
+}
+.fix-appnav-shadow(@color-primary);
+
+.appbar-title-label {
+  background-color: @color-inverse;
+  color: @color-primary;
+}
+
+.breadcrumb {
+  background-color: @color-pale;
+}
+
+.modal-header {
+  background-color: @color-primary;
+  color: @color-inverse;
+  border-bottom-color: @color-primary;
+
+  .close {
+    color: @color-inverse;
+    opacity: .5;
+  }
+}
+
+.m-user-control .user-control-nav > li > a > [class*='icon-'] {color: @color-primary-text;}
+
+.panel-block .panel-heading {
+  background-color: @color-pale;
+}
+
+.panel-cards.panel-borderless {
+  border: none;
+
+  .panel-heading, .card {
+    border: none;
+    box-shadow: none;
+  }
+
+  .card {background: transparent;}
+}

@@ -1,0 +1,2 @@
+#replyList td.relpy-content {padding: 0; max-width:600px;}
+#replyList td.relpy-content > a {display: block; padding: 8px; max-height: 180px; overflow-y: scroll; word-break: break-all;max-width:100%;}

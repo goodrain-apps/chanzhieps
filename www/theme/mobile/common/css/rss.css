@@ -1,0 +1,22 @@
+@-ms-viewport {
+   width: 100%;
+   zoom: 1;
+}
+@-o-viewport { 
+   width: 100%;
+   zoom: 1;
+}
+@viewport {
+   width: 100%;
+   zoom: 1; 
+}
+channel {display: block; padding: 10px; line-height: 1.4; font-size: 14px; zoom: 1;}
+link {font-size: 12px; display: block;}
+category, pubDate {font-size: 12px; display: inline-block; background-color: #e5e5e5; padding: 2px 4px; margin-top: 5px;}
+description {display: block; color: #808080; font-size: 12px; margin-bottom: 10px;}
+channel > title {display: block; font-size: 24px; padding: 5px 0; margin-bottom: 5px; font-weight: bold;}
+channel > link {display: block;margin-bottom: 10px;}
+channel > copyright, channel > lastBuildDate {display: block; background-color: #f1f1f1; padding: 5px; font-size: 12px;}
+channel > lastBuildDate {margin-bottom: 20px;}
+channel > item {display: block; border: 1px solid #ddd; margin-bottom: 20px; padding: 8px; border-bottom: 2px solid #ddd; border-radius: 2px;}
+channel > item title {font-size: 16px; display: block; margin-bottom: 10px;}

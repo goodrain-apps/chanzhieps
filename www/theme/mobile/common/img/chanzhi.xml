@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="12px" viewBox="0 0 32 12">
+<path d="M2 0h1v3h2v5h-2v2h-1v-2h-2v-5h2z" fill="#777"/>
+<path d="M6 0h4v3h-4z" fill="#777"/>
+<path d="M11 0h4v3h-4z" fill="#777"/>
+<path d="M17 0h1v2h6v1h-3v2h3v1h-3v2h-1v-2h-3v-1h3v-2h-3z" fill="#777"/>
+<path d="M7 1h2v1h-2z" fill="#FFF"/>
+<path d="M12 1h2v1h-2z" fill="#FFF"/>
+<path d="M25 1h7v10h-7v-7h4v5h-1v-4h-2v5h5v-8h-6z" fill="#777"/>
+<path d="M1 4h1v3h-1z" fill="#FFF"/>
+<path d="M3 4h1v3h-1z" fill="#FFF"/>
+<path d="M6 4h9v5h-4v1h5v1h-5v1h-1v-1h-4v-1h4v-1h-4z" fill="#777"/>
+<path d="M7 5h3v1h-3z" fill="#FFF"/>
+<path d="M11 5h3v1h-3z" fill="#FFF"/>
+<path d="M7 7h3v1h-3z" fill="#FFF"/>
+<path d="M11 7h3v1h-3z" fill="#FFF"/>
+<path d="M19 8h1v1h-1z" fill="#777"/>
+<path d="M21 8h1v1h-1z" fill="#777"/>
+<path d="M18 9h1v1h-1z" fill="#777"/>
+<path d="M22 9h1v1h-1z" fill="#777"/>
+<path d="M1 10h1v1h2v-1h1v1h1v1h-6v-1h1z" fill="#777"/>
+<path d="M17 10h1v1h-1z" fill="#777"/>
+<path d="M23 10h1v1h-1z" fill="#777"/>
+<path d="M16 11h1v1h-1z" fill="#777"/>
+<path d="M24 11h1v1h-1z" fill="#777"/>
+</svg>

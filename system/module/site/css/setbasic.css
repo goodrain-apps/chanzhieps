@@ -1,0 +1,4 @@
+.icpSN .col-sm-8{padding-left: 0;}
+.icpSN .col-sm-4 input{border-radius: 3px 0 0 3px;}
+.icpSN .input-group-addon{border-radius: 0 3px 3px 0; border-left: none;}
+.table td > a.hide{display: none;}

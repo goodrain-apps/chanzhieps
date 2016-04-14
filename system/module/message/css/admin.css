@@ -1,0 +1,52 @@
+dl.alert{margin-top: 10px;}
+dl.alert dl.alert{margin-bottom: 0;}
+.reply-alert {max-height: 100px; overflow-y: scroll;}
+dl.alert dd{display:inline-block; margin-right: 20px;}
+
+.panel {border: none; box-shadow:none;}
+.panel-heading {border: 1px solid #ddd;}
+.panel-body{border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px 0 0;}
+.separator {border-top:1px solid #ddd;}
+.pager{margin-top:5px;}
+.original, .original textarea {background-color:#fbfbfb;}
+.message table {margin-bottom:0;}
+.message
+{
+    display: table;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    transition: all .5s cubic-bezier(.175,.885,.32,1);
+    box-shadow: 0 1px 2px rgba(0,0,0,.075);
+    margin: 6px 0;
+    padding: 0;
+    max-width: 100%;
+}
+.message-id
+{
+    display: table-cell;
+    padding: 8px;
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: 400;
+    color: #888;
+    text-align: center;
+    background: #f1f1f1;
+    border-right: 1px solid #ddd;
+    width: 60px;
+}
+th.th-from
+{
+    text-align: center;
+    padding-right: 0;
+    width: 180px;
+    border-right: solid 1px #f1f1f1;
+    vertical-align: middle;
+}
+.message-action
+{
+    display: table-cell;
+    text-align: center;
+    border-left: solid 1px #f1f1f1;
+    width: 100px;
+    vertical-align: middle;
+}

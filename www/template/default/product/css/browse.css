@@ -1,0 +1,20 @@
+.media-placeholder {display: block; width: 100%; height: 100%; color: #fff; font-weight: bold; text-shadow: 2px 2px 0 #ccc, 1px 1px 0 #eee; padding: 25px; font-size: 24px; word-spacing:normal; word-break:break-all; text-align: center;}
+.media-placeholder-list {padding: 5px; font-size: 15px;}
+
+.cards-products .media-wrapper { height: 200px; line-height: 200px; max-height: 200px; }
+.cards-products .media-wrapper:hover {text-decoration: none}
+.cards-products .media-placeholder { height: 200px; line-height: 150px}
+.cards-products .card-heading {padding-bottom: 5px;}
+.cards-products .card-content { padding-bottom: 0; }
+.cards-products>div { padding-top: 15px; border-bottom: 1px dotted #e5e5e5; }
+.cards-products .card { margin-bottom: 15px; }
+.list-condensed .cards { padding-top: 0; margin: 0; }
+.cards-products .card-info {position: relative;}
+.cards-products .card-info > .views-count {position: absolute; right: 0; top: 10px; opacity: .8}
+.card > .media-wrapper{background: none;}
+.card:hover > .media-wrapper{background: none;}
+.price{font-size: 20px;}
+.card-heading a{color: #333;}
+
+.btn-group .btn {min-width: 30px; text-shadow: none; padding: 3px; border-color: transparent; border-radius: 2px!important; background: none;}
+.table-list td{vertical-align:middle;}

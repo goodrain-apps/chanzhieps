@@ -1,0 +1,11 @@
+.user-control-nav{margin-bottom: 20px;}
+.break-all {word-wrap: break-word; word-break: break-all;}
+.pager {margin:0px;}
+@media (max-width: 480px) { .hidden-xxs {display: none} .page {font-size: 12px}}
+@media (max-width: 400px) { .hidden-xxxs {display: none}}
+
+#reset {max-width: 450px; margin: 20px auto;}
+@media (max-width: 767px) {#reset {margin: 10px auto;} #reset .panel {margin: 20px auto; width: 100%;} #reset .panel-heading {padding: 0 0 10px 0;} #reset .panel-body {padding: 10px 0; min-height: inherit;} .panel-body > form {padding-right: 0;}}
+
+#bindForm{height: 280;}
+.nav-primary.nav-stacked > li.nav-heading{background-image:none;}

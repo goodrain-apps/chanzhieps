@@ -1,0 +1,7 @@
+.tree .alert {margin-top: 5px; padding: 8px 15px; margin-bottom: 10px;}
+.jsoner{margin-right: 10px;}
+#childList .sort-handle {cursor: move; color: #0d3d88; padding: 0 5px;}
+#childList .category.dragging {opacity: 0.35; background-color: #FFF4E5;}
+#childList .category.drag-shadow {border: 1px solid #ddd; padding: 5px 0; box-shadow:0 1px 8px rgba(0,0,0,.15); background-color: #fff; z-index: 9999}
+
+body.body-modal-ve {padding: 20px;}

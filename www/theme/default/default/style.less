@@ -1,0 +1,599 @@
+/*
+ * Chanzhi custom theme
+ *
+ * This file built by machine at {buildTime} automatically.
+ * Template: default
+ * Theme:    default
+ */
+
+// Default variables
+@darkColor: #333;
+@lightColor: #fff;
+@fore-color: #333;
+@back-color: #fff;
+@border-width: 1px;
+@border-style: solid;
+@border-radius: 3px;
+
+// Mixins
+.background-image(@image) when not(@image = 'default')
+{
+    background-image: @image;
+}
+
+.line-gradient(@top; @bottom)
+{
+    background-image: -moz-linear-gradient(top, @top 0%, @bottom 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@top), color-stop(100%,@bottom));
+    background-image: -webkit-linear-gradient(top, @top 0%,@bottom 100%);
+    background-image: -o-linear-gradient(top, @top 0%,@bottom 100%);
+    background-image: linear-gradient(top, @top 0%,@bottom 100%);
+}
+.line-gradient(@color;)
+{
+    .line-gradient(lighten(@color, 2.5%), darken(@color, 1%));
+}
+
+.line-gradient-with-image(@color; @image) when (@image = 'default'), (@image = 'none')
+{
+    .line-gradient(@color);
+}
+
+.box-shadow(@shadow)
+{
+  -moz-box-shadow    : @shadow;
+  -webkit-box-shadow : @shadow; // iOS <4.3 & Android <4.1
+  box-shadow         : @shadow;
+}
+.background(@color; @image; @imageRepeat; @imagePositionX; @imagePositionY)
+{
+    background: @color @image @imageRepeat @imagePositionX @imagePositionY;
+}
+
+.font(@color; @size; @font; @weight)
+{
+    color: @color;
+    font-size: @size;
+    font-family: @font;
+    font-weight: @weight;
+}
+.textstyle(@color; @size; @weight)
+{
+    color: @color;
+    font-size: @size;
+    font-weight: @weight;
+}
+.border(@style; @color; @width; @radius)
+{
+    border: @style @color @width;
+    border-radius: @radius;
+}
+.caret(@color)
+{
+    border-top-color: @color;
+    border-bottom-color: @color;
+}
+
+.panel(@backColor; @color; @bodyLinkColor;
+       @borderStyle; @borderColor; @borderWidth; @borderRadius;
+       @headColor; @headFontSize; @headFontWeight; @headBackColor;
+)
+{
+    .panel,
+    .article,
+    .list
+    {
+        color: @color;
+        background-color: @backColor;
+        .border(@borderStyle, @borderColor, @borderWidth, @borderRadius);
+    }
+
+    .panel > .panel-heading,
+    .list > header
+    {
+        border-bottom: @borderStyle @borderColor @borderWidth;
+        font-weight: @headFontWeight;
+        font-size: @headFontSize;
+        background-color: @headBackColor;
+        color: @headColor;
+    }
+
+    .panel-heading > h4 {margin: 0; line-height: 20px}
+
+    .panel > .panel-heading a:not(.btn)
+    {
+        color: @headColor;
+    }
+
+    .panel-body a:not(.btn),
+    .panel-body a:not(.btn):visited
+    {
+        color: @block-body-link-color;
+    }
+
+    .panel-body a:not(.btn):hover
+    {
+        color: lighten(@block-body-link-color, 10%);
+    }
+
+    .nav-primary.nav-stacked
+    {
+        color: @color;
+        background-color: @backColor;
+
+        > li:first-child > a,
+        > li:first-child.nav-heading
+        {
+            border-radius: @borderRadius @borderRadius 0 0;
+        }
+
+        > li.nav-heading
+        {
+            border: @borderStyle @borderColor @borderWidth;
+            font-weight: @headFontWeight;
+            font-size: @headFontSize;
+            background-color: @headBackColor;
+            color: @headColor;
+        }
+
+        > li > a
+        {
+            border: @borderStyle @borderColor @borderWidth;
+        }
+
+        > li > a:hover
+        {
+            color: @link-hover-color;
+        }
+
+        > li.active > a,
+        > li.active > a:hover,
+        > li.active > a:active,
+        > li.active > a:focus
+        {
+            color: contrast(darken(@link-hover-color, 10%), @fore-color, @back-color);
+            background-color: @link-hover-color;
+        }
+    }
+}
+
+.navbarLayout(@layout; @radius; @backcolor) when (@layout = true)
+{
+    @media (min-width: 768px)
+    {
+        #navbar .navbar-nav {width: 100%}
+        .navbar-nav > li:first-child > a {border-radius: @radius 0 0 @radius}
+
+        #navbar .navbar-collapse {padding: 0;}
+        #navbar .navbar-nav > li {float: none; display: table-cell; width: 1%; vertical-align: top}
+        #navbar .navbar-nav > li > a {text-align: center; white-space:nowrap;}
+
+        #navbar .navbar-nav > li:first-child > a {border-radius: @radius 0 0 @radius;}
+        #navbar .navbar-nav > li:last-child > a {border-radius: 0 @radius @radius 0;}
+    }
+}
+.navbarLayout(@layout; @radius) when (@layout = false)
+{
+    @radiusX: @radius + 3px;
+    @media (min-width: 768px)
+    {
+        .navbar-nav > li:first-child > a {border-radius: @radius 0 0 @radius}
+        .navbar-nav.navbar-right > li:last-child > a {border-radius: 0 @radius @radius 0}
+    }
+}
+
+.columnLayout(@inverse) when (@inverse)
+{
+    .col-main {float: right;}
+    .col-side {float: left;}
+}
+
+.footerLayout(@borderStyle; @backColor) when not(@borderStyle = none), not(@backColor = transparent)
+{
+    #footer {padding: 20px 15px;}
+    #footNav {left: 15px;}
+    #powerby {right: 15px;}
+}
+
+.btn(@color;)
+{
+    @textColor: contrast(darken(@color, 10%), @fore-color, @back-color);
+    @border: darken(@color, 12%);
+
+    color: @textColor;
+    border-color: @border;
+    background-color: @color;
+
+    &:hover
+    {
+        background-color: darken(@color, 6%);
+        border-color: darken(@border, 6% + 4%);
+    }
+    &:focus,
+    &:active,
+    &.active,
+    .open .dropdown-toggle&
+    {
+        color: @textColor;
+        background-color: lighten(@color, 10%);
+        border-color: lighten(@border, 10% - 4%);
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] &
+    {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active
+        {
+          background-color: @color;
+              border-color: @border;
+        }
+    }
+}
+
+.globalFontFamily(@font) when not(@font = inherit)
+{
+    font-family: @font;
+}
+
+/* Global style */
+body
+{
+    .background(@background-color, @background-image, @background-image-repeat, @background-image-position-x, @background-image-position-y);
+    .globalFontFamily(@font-family);
+    font-size: @font-size;
+    color: @text-color;
+    font-weight: @font-weight;
+}
+
+/* Links */
+a
+{
+    color: @link-color;
+    text-decoration: @link-decoration;
+}
+a:visited
+{
+    color: @link-visited-color;
+}
+a:hover
+{
+    color: @link-hover-color;
+    text-decoration: @link-hover-decoration;
+}
+a:active, a:focus
+{
+    color: lighten(@link-hover-color, 10%);
+}
+
+/* Containers. */
+.page-container {padding: 0 15px; margin: 0 auto 20px auto;position: relative;}
+.ie-8 .page-container {max-width: 1170px}
+.page-container:before,.page-container:after {content: " "; display: table;}
+.page-container:after {clear: both;}
+@media (min-width: 768px) {.page-container {max-width: 750px;}}
+@media (min-width: 992px) {.page-container {max-width: 970px;}}
+@media (min-width: 1200px) {.page-container {max-width: 1170px;}}
+@media (max-width: 767px) {.page-container {padding: 0 10px;}}
+
+/* Buttons */
+.btn, a.btn
+{
+    .border(@button-border-style, transparent, @button-border-width, @button-border-radius);
+    font-weight: @button-font-weight;
+    .btn(@button-color-default);
+}
+.btn-warning, a.btn-warning {.btn(@button-color-warning);}
+.btn-primary, a.btn-primary {.btn(@button-color-primary);}
+.btn-info, a.btn-info {.btn(@button-color-info);}
+.btn-success, a.btn-success {.btn(@button-color-success);}
+.btn-danger, a.btn-danger {.btn(@button-color-danger);}
+
+.btn-link
+{
+    color: @link-color;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus
+    {
+        border: none;
+        background-color: transparent;
+    }
+
+    &:hover
+    {
+        color: lighten(@link-color, -5%);
+    }
+
+    &:active,
+    &:focus
+    {
+        color: lighten(@link-color, -10%);
+    }
+}
+
+/* Nav */
+.booksNav .nav-primary.nav-stacked > li.active > a,
+.booksNav .nav-primary.nav-stacked > li.active > a:hover,
+.booksNav .nav-primary.nav-stacked > li.active > a:active,
+.booksNav .nav-primary.nav-stacked > li.active > a:focus {background: #f1f1f1; color: @link-hover-color; border-color: #ddd;}
+
+.nav-secondary > li.active > a,
+.nav-secondary > li.active > a:visited,
+.nav-secondary > li.active > a:hover,
+.nav-secondary > li.active > a:focus
+{
+    color: @link-hover-color;
+    background-color: #fafafa;
+    border-color: #ddd;
+}
+
+.nav-secondary > li.active > a:hover {background-color: #f1f1f1}
+
+/* Navbar */
+.navbar
+{
+    .background(@navbar-backcolor, @navbar-background-image, @navbar-background-image-repeat, @navbar-background-image-position-x, @navbar-background-image-position-y);
+    .border(@navbar-border-style, @navbar-border-color, @navbar-border-width, @navbar-border-radius);
+    font-weight: @navbar-menu-font-weight;
+    font-size: @navbar-menu-font-size;
+    font-family: @navbar-menu-font-family;
+}
+.navbar a
+{
+    font-weight: @navbar-menu-font-weight;
+    font-size: @navbar-menu-font-size;
+    font-family: @navbar-menu-font-family;
+}
+.navbar-nav > li > a,
+.navbar-brand,
+.navbar-nav > li > a:visited,
+.navbar-brand:visited
+{
+    min-width: 50px;
+    color: @navbar-menu-color;
+}
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus,
+.navbar-brand:hover,
+.navbar-brand:focus
+{
+    color: @navbar-menu-color-hover;
+    background-color: @navbar-menu-backcolor-hover;
+}
+.navbar-nav > li.active > a,
+.navbar-nav > li.active > a:hover,
+.navbar-nav > li.active > a:focus,
+.navbar-nav > li.active > a:visited
+{
+    color: @navbar-menu-color-active;
+    background-color: @navbar-menu-backcolor-active;
+}
+
+@media (max-width: 991px)
+{
+    #navbar .navbar-nav > li.nav-item-searchbar,
+    #headTitle > .row > #siteLogo + #siteSlogan,
+    #headTitle > .row > #siteName + #siteSlogan {display: none}
+}
+
+@media (max-width: 767px)
+{
+    #headNav {margin: 0 -10px;}
+    #searchbar {left: 0;}
+    #headTitle {top: 49px;}
+    .navbar {margin-top: 14px;}
+
+    .navbar-nav > li {display: block; float: left; width: 33.333333333333333%}
+    .navbar-collapse.in {overflow: visible;}
+    .navbar-nav > li.open .dropdown-menu
+    {
+        position: absolute;
+        top: 20px;
+        left: 20%;
+        z-index: 99999;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        background-color: #f7f7f7;
+    }
+
+    #headNav > .row > nav {width: 100%}
+    #headNav > .row > nav > #searchbar {position: absolute; left: 0; top: 2px}
+}
+@media (max-width: 500px)
+{
+    .navbar-nav > li {width: 50%;}
+    #headNav > .row > nav > #searchbar {display: none}
+}
+
+@media (min-width: 992px)
+{
+    .navbar-nav > li > a
+    {
+        padding: 9px 10px;
+    }
+
+    .navbar-nav > li > a:hover,
+    .navbar-nav > li > a:focus,
+    .navbar-brand:hover,
+    .navbar-brand:focus
+    {
+        background-color: @navbar-menu-backcolor-hover;
+    }
+
+    .navbar-nav > li.active > a,
+    .navbar-nav > li.active > a:hover,
+    .navbar-nav > li.active > a:focus,
+    .navbar-nav > li.active > a:visited
+    {
+        background-color: @navbar-menu-backcolor-active;
+    }
+}
+
+.navbar-nav .caret
+{
+    .caret(darken(@navbar-menu-color, 8%));
+    .caret(fade(@navbar-menu-color, 50%));
+}
+.navbar-nav a:hover .caret
+{
+    .caret(@navbar-menu-color-hover);
+}
+.nav.navbar-nav .open > a .caret,
+.nav.navbar-nav .open > a:hover .caret,
+.nav.navbar-nav .open > a:focus .caret,
+.navbar-nav > .active a .caret
+{
+    .caret(darken(@navbar-menu-color-active, 8%));
+}
+.navbar-toggle
+{
+    border-color: 1px solid rgba(0, 0, 0, 0.15);
+}
+.navbar-toggle .icon-bar
+{
+    background: fade(@navbar-menu-color, 70%);
+}
+.navbar-toggle:hover, .navbar-toggle:focus
+{
+    background: lighten(@navbar-menu-backcolor-hover, 10%);
+    border-color: rgba(0, 0, 0, 0.25)
+}
+.navbar-toggle:hover .icon-bar, .navbar-toggle:focus .icon-bar
+{
+    background: @navbar-menu-color-active;
+}
+
+.navbar-collapse.in {border-top: @navbar-border-style @navbar-border-color @navbar-border-width}
+
+.navbar-nav > li > .dropdown-menu, .navbar-nav .dropdown-menu
+{
+    background-color: @navbar-panel-backcolor;
+    .border(@navbar-panel-border-style, @navbar-panel-border-color, @navbar-panel-border-width, @navbar-paenl-border-radius);
+    padding: 0;
+
+}
+.navbar-nav .dropdown-submenu > .dropdown-menu {margin-top: -1px;}
+.navbar-nav .dropdown-menu > li > a
+{
+    color: @navbar-submenu-color;
+    background-color: transparent;
+    padding: 10px 20px;
+}
+.navbar-nav .dropdown-menu > li:first-child > a
+{
+    border-radius: @navbar-paenl-border-radius @navbar-paenl-border-radius 0 0;
+}
+.navbar-nav .dropdown-menu > li:last-child > a
+{
+    border-radius: 0 0 @navbar-paenl-border-radius @navbar-paenl-border-radius;
+}
+.navbar-nav .dropdown-menu > li > a:hover
+{
+    color: @navbar-submenu-color-hover;
+    background-color: @navbar-submenu-backcolor-hover;
+}
+.navbar-nav .dropdown-menu > li.active > a,
+.navbar-nav .dropdown-menu > li.active > a:focus,
+.navbar-nav .dropdown-menu > li.active > a:hover
+{
+    color: @navbar-submenu-color-active;
+    background-color: @navbar-submenu-backcolor-active;
+}
+
+.navbar-nav .dropdown-submenu > a:after
+{
+    border-left-color: darken(@navbar-submenu-color, 8%);
+    border-left-color: fade(@navbar-submenu-color, 60%);
+}
+.navbar-nav .dropdown-submenu > a:hover:after
+{
+    border-left-color: @navbar-submenu-color-hover;
+}
+.navbar-nav .dropdown-submenu.active > a:after
+{
+    border-left-color: darken(@navbar-submenu-color-active, 8%);
+}
+
+.navbarLayout(@navbar-table-layout, @navbar-border-radius, @navbar-backcolor);
+
+/* Panel */
+.panel(@block-body-backcolor, @block-body-color, @block-body-link-color,
+       @block-border-style, @block-border-color, @block-border-width, @block-border-radius,
+       @block-heading-color, @block-heading-font-size, @block-heading-font-weight, @block-heading-backcolor);
+
+/* Column style */
+@media (min-width: 992px)
+{
+    .columnLayout(@sidebar-pull-left);
+    .col-main {width: 100% - @sidebar-width;}
+    .col-side {width: @sidebar-width}
+}
+
+/* Form */
+@input-border-style: @button-border-style;
+@input-border-color: #ccc;
+@input-border-width: @button-border-width;
+@input-border-radius: @button-border-radius;
+@input-border-color-active: lighten(@button-color-primary, 10%);
+
+.form-control
+{
+    .border(@input-border-style, @input-border-color, @input-border-width, @input-border-radius);
+    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+    &:focus
+    {
+        border-color: @input-border-color-active;
+        @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@input-border-color-active, 10%);
+        .box-shadow(@shadow);
+    }
+}
+
+/* Headnav */
+#header.compatible
+{
+    #headNav .login-msg, #headNav nav > a, #msgBox {display: inline-block; margin-left: 1px; margin-right: 6px;}
+    #headNav .login-msg:after, #headNav nav > a:after, #msgBox:after {content: '|'; display: inline-block; margin-left: 5px; line-height: 20px; color: #ccc}
+    #headNav nav > a:last-child:after {display: none;}
+    #siteName a {color: #333}
+}
+
+#navbar li.nav-item-searchbar {float: none!important}
+#navbar li.nav-item-searchbar #searchbar > form {margin: 3px!important;}
+
+/* Footer */
+#footer
+{
+    margin-bottom: 20px;
+    background-color: @footer-backcolor;
+    .border(@footer-border-style, @footer-border-color, @border-width, @border-radius);
+}
+#footNav a:hover, #powerby a:hover {color: @link-hover-color;}
+#powerby:hover .icon-chanzhi > i, #powerby:hover .icon-chanzhi > i:before, #powerby:hover .icon-chanzhi > i:after {border-color: @link-hover-color;}
+
+.footerLayout(@footer-border-style, @footer-backcolor);
+
+/* Carousel */
+@media (min-width: 992px) {.ie-8 .carousel-caption {left: 12% !important}}
+@media (max-width: 1199px) {.carousel-caption {top: 3%}}
+@media (max-width: 991px) {.carousel-caption {top: 1%;} .carousel-caption h2 {font-size: 18px; margin: 2px 0} .carousel-caption .btn {margin-top: 0;font-size: 14px; padding: 8px 15px;}}
+@media (max-width: 767px) {.carousel-caption {top: 10px; padding-top: 5px; right: 20px} .carousel-caption h2 {font-size: 16px; margin: 0 0 2px} .carousel-caption ul {font-size: 12px} .carousel-caption .btn {font-size: 14px; padding: 5px 15px;}}
+@media (max-width: 620px) {.carousel-caption {top: 10px; padding-top: 0;} .carousel-caption h2 {font-size: 14px;} .carousel-caption ul {font-size: 12px; line-height: 1.2em; padding: 5px 0 5px 20px} .carousel-caption .btn {font-size: 12px; padding: 4px 15px;}}
+@media (max-width: 480px) {.carousel-caption{top: 10px;} .carousel-caption ul {font-size: 12px; line-height: 1.1em; padding: 4px 0 4px 20px} .carousel-caption h2 {font-size: 12px; margin: 0} .carousel-caption .btn {font-size: 12px; padding: 2px 6px;}.carousel-inner>.item>img, .carousel-inner>.item>a>img {min-height: 100px}}
+
+/* Article */
+.article > header > .dl-inline, .article > header > .abstract {margin: 0; border-radius: 3px;}
+.article > header > .dl-inline {padding: 10px 0;}
+@media (max-width: 620px) {.article > header > .dl-inline .pull-right {float: none !important; margin: 10px 0; display: block;}}
+
+/* items */
+.item .media {text-align: center; overflow: hidden; background-color: #f1f1f1; max-height: 100px; transition:all 0.3s; max-width: 200px}
+.item .media img {max-height: 100%; max-width: 100%; }
+.items .item .text-muted {color: #757575}
+
+/* thumbnail */
+.thumbnail {padding: 4px; border: 1px solid #ddd; background-color: #fff; border-radius: 2px}

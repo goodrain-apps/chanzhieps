@@ -1,0 +1,13 @@
+.panel-heading > a { display: inline-block; margin: -3px 3px; line-height: 26px;padding: 0 10px}
+.panel-heading > a.active { border-radius: 13px; background-color: #3280FC;color: #fff}
+.panel-heading > ul.pull-left{list-style-type:none; font-weight:normal;}
+
+.layout-menu {min-width: 200px;}
+.layout-menu > li {position: relative;}
+.layout-menu > li > a {padding-right: 60px}
+.layout-menu > li.active > a, .layout-menu > li.active > a:hover, .layout-menu > li:hover, .layout-menu > li > a:hover {background-color: #ebf2f9; color: #333}
+.layout-menu > li.active > a {color: #145ccd}
+.layout-menu > li > .actions {position: absolute; right: 0; top: 0; opacity: 0}
+.layout-menu > li:hover > .actions {position: absolute; right: 0; top: 0; opacity: 1}
+.layout-menu > li > .actions > a {display: block; float: left; width: 26px; height: 26px; text-align: center; line-height: 26px;}
+.layout-menu > li > .actions > a:hover {background-color: rgba(0,0,0,0.1);}

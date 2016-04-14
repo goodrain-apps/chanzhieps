@@ -1,0 +1,15 @@
+.nav-tabs {margin-bottom: 10px;}
+.nav-tabs > li.active > a {color: #347aeb}
+.nav-blocks > li {float: left; width: 200px; margin-right: 8px;}
+.nav-blocks > li > a {border: 1px solid #ddd; margin-bottom: 8px;}
+.nav-blocks > li > a > strong {font-weight: 500;}
+.nav-blocks > li > a > small {display: block; color: #aaa}
+.nav-blocks > li > a:hover {border-color: #347aeb; background-color: #ebf2f9}
+
+#searchbox {display: block; width: 200px; position: relative; margin-right: 10px; float: left;}
+#createBlockBtn {display: block; float: left;}
+#searchbox > .icon {position: absolute; left: 10px; top: 8px; color: #aaa}
+#searchbox > .form-control {padding-left: 30px;}
+
+#addRegionBlock {border-color: #03b8cf; color: #03b8cf;}
+#addRegionBlock:hover {border-color: #039eb2; color: #03b8cf; background-color: #ddf3f5}

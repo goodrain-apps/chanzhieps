@@ -1,0 +1,4 @@
+.sitemap-tree{margin: 30px 0 20px 0;position: relative;border-top: 1px dashed #e5e5e5;padding: 25px 0 20px 0;}
+@media (min-width: 992px) {.sitemap-tree { padding-left: 80px; }}
+.sitemap-tree > h4{display: block;position: absolute;left: 0;top: -25px;padding: 5px 15px;border-radius: 15px;background-color: #f1f1f1;font-size: 14px;line-height: 20px;font-weight: bold;color: #666;}
+.sitemap-tree .tree > li{float: left;min-width: 150px;}

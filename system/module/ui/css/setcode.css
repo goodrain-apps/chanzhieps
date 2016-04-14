@@ -1,0 +1,10 @@
+.leftmenu.affix {top: 100px;}
+.leftmenu {width: 100%}
+
+#mainPanel .panel-heading {padding: 4px 5px 0 5px}
+#mainPanel .nav-tabs {margin-bottom: -1px}
+#mainPanel .nav-tabs > li > a {padding: 5px 10px 8px}
+#mainPanel .nav-tabs > li > a.active, #mainPanel .nav-tabs > li > a.focus {outline: none;}
+#mainPanel .nav-tabs > li.active > a {padding: 6px 10px 7px; color: #333; font-weight: bold;}
+
+.editor-wrapper pre {border: none}

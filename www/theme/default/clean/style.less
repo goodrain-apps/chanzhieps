@@ -1,0 +1,351 @@
+/*
+ * The theme 'clean'
+ */
+@color-fore: #333;
+@color-back: #fff;
+@color-pale: mix(#fff, @color-primary, 90%);
+@color-inverse: contrast(@color-primary, #333, #fff, 60%);
+@color-inverse-dark: darken(@color-primary, 60%);
+@color-primary-text: contrast(@color-primary, @color-inverse-dark, @color-primary, 60%);
+@color-link: darken(@color-primary-text, 15%);
+
+// Mixins
+.background-image(@image; @imageRepeat; @imagePositionX; @imagePositionY) when not(@image = inherit)
+{
+    background-image: @image;
+    background-repeat: @imageRepeat;
+    background-position: @imagePositionX @imagePositionY;
+}
+.caret(@color)
+{
+    border-top-color: @color;
+    border-bottom-color: @color;
+}
+
+.panel(@color)
+{
+    .panel,
+    .article,
+    .list
+    {
+        background-color: #fff;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom-width: 2px; 
+    }
+
+    .panel > .panel-heading,
+    .list > header
+    {
+        background: #f5f5f5;
+        border-bottom: none;
+    }
+
+    .panel-heading > h4 {margin: 0; line-height: 20px}
+
+    .nav-primary,
+    .nav-secondary
+    {
+        background-color: #fff;
+
+        > li:first-child > a,
+        > li:last-child > a,
+        > li:first-child.nav-heading
+        {
+            border-radius:0;
+        }
+
+        > li.nav-heading
+        {
+            background-color: #f5f5f5;
+        }
+
+        > li > a
+        {
+        }
+
+        > li > a:hover
+        {
+            color: @color;
+        }
+
+        > li.active > a,
+        > li.active > a:hover,
+        > li.active > a:active,
+        > li.active > a:focus
+        {
+            color: @color-inverse;
+            background-color: @color;
+            border-color: @color;
+        }
+    }
+}
+
+.navbarLayout(@layout; @radius; @backcolor) when (@layout = true)
+{
+    @media (min-width: 768px)
+    {
+        #navbar .navbar-nav {width: 100%}
+        .navbar-nav > li:first-child > a {border-radius: @radius 0 0 @radius}
+
+        #navbar .navbar-collapse {padding: 0;}
+        #navbar .navbar-nav > li {float: none; display: table-cell; width: 1%}
+        #navbar .navbar-nav > li > a {text-align: center; white-space:nowrap; box-shadow: inset 1px 0 0 lighten(@backcolor, 10%), inset -1px 0 0 darken(@backcolor, 10%);}
+
+        #navbar .navbar-nav > li:first-child > a {border-radius: @radius 0 0 @radius; box-shadow: inset -1px 0 0 darken(@backcolor, 10%);}
+        #navbar .navbar-nav > li:last-child > a {border-radius: 0 @radius @radius 0; box-shadow: inset 1px 0 0 lighten(@backcolor, 10%);}
+    }
+}
+.navbarLayout(@layout; @radius) when (@layout = false)
+{
+    @radiusX: @radius + 3px;
+    @media (min-width: 768px)
+    {
+        .navbar-nav > li:first-child > a {border-radius: @radius 0 0 @radius}
+        .navbar-nav.navbar-right > li:last-child > a {border-radius: 0 @radius @radius 0}
+    }
+}
+
+.columnLayout(@inverse) when (@inverse)
+{
+    .col-main {float: right;}
+    .col-side {float: left;}
+}
+
+.footerLayout(@borderStyle; @backColor) when not(@borderStyle = none), not(@backColor = transparent)
+{
+    #footer {padding: 20px 15px;}
+    #footNav {left: 15px;}
+    #powerby {right: 15px;}
+}
+
+.button(@color;)
+{
+    @textColor: @color-inverse;
+    @border: darken(@color, 2%);
+
+    color: @textColor;
+    border-color: @border;
+    background-color: @color;
+    border-radius: 1px;
+    text-shadow: none;
+
+    &:hover
+    {
+        background-color: darken(@color, 6%);
+        border-color: darken(@border, 6% + 4%);
+        color: @textColor;
+    }
+    &:focus,
+    &:active,
+    &.active,
+    .open .dropdown-toggle&
+    {
+        color: @textColor;
+        background-color: lighten(@color, 10%);
+        border-color: lighten(@border, 10% - 4%);
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] &
+    {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active
+        {
+          background-color: @color;
+              border-color: @border;
+        }
+    }
+}
+
+.panel(@color-primary);
+
+.btn {.button(@color-primary);}
+.btn-group .btn {border-radius: 1px!important; color: @color-link;}
+.btn-group .btn:hover {color: #fff}
+.btn-group .btn.active {color: @color-primary; background-color: @color-pale}
+
+/* Column style */
+@media (min-width: 992px)
+{
+    .columnLayout(@sidebar-pull-left);
+    .col-main {width: 100% - @sidebar-width;}
+    .col-side {width: @sidebar-width}
+}
+
+/* Global style */
+body
+{
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABpCAMAAAAOXP0IAAAAElBMVEXv7+/8/Pzm5uby8vL4+Pjr6+s8Y2RHAAAAiUlEQVR42u3ZMQrAMAgFUJPo/a/csQRKoRSEljc4OJhAHp8MRsQYPRVzrXlWzq3PtfW1tr6ezMZ4c9aT2b6b+l6PEydOnO6dsio7ipM8ceLE6ftOfb8GJ3nixInTH5wqszqKkzxx4sTp+059vwYneeLEiZO9hr2GPHHixMlew15Dnjhx4sTpavYAfp9zffLSX1UAAAAASUVORK5CYII=");
+    .background-image(@background-image, @background-image-repeat, @background-image-position-x, @background-image-position-y);
+}
+
+/* Links */
+a
+{
+  color: @color-link;
+
+  &.primary, &.text-primary 
+  {
+    color: @color-primary-text;
+  }
+
+  &:hover,
+  &:focus 
+  {
+    color: lighten(@color-primary-text, 5%);
+  }
+}
+
+/* Containers. */
+.page-container {padding: 0 15px; margin: 0 auto 20px auto; position: relative;}
+.ie-8 .page-container {max-width: 1170px}
+.page-container:before,.page-container:after {content: " "; display: table;}
+.page-container:after {clear: both;}
+@media (min-width: 768px) {.page-container {max-width: 750px;}}
+@media (min-width: 992px) {.page-container {max-width: 970px; padding-top: 10px;}}
+@media (min-width: 1200px) {.page-container {max-width: 1170px;}}
+@media (max-width: 767px) {.page-container {padding: 0 10px;}}
+
+body > .page-container
+{
+    background-color:rgba(255,255,255,0.9);
+    border-radius:1px;
+    margin-top: 20px;
+    border:1px solid #ccc;
+    box-shadow:0px 1px 6px rgba(0,0,0,0.15);
+}
+
+/* Header */
+#header.compatible
+{
+    #headNav {top: 25px;}
+    #headNav nav > span, #headNav nav > a {margin-right: 10px}
+    #headNav.with-searchbar {top: 10px;}
+    #headNav.with-searchbar #searchbar .form-control {height: 30px;}
+    #headNav.with-searchbar #searchbar .btn {padding: 4px; top: 1px; right: 2px;}
+}
+
+/* Search bar */
+#searchbar .form-control {border-radius: 0; border: none; border-bottom: 2px solid #ddd; box-shadow: none; padding-left: 8px; background: none; padding-top: 11px; padding-bottom: 9px; height: 43px; color: #808080}
+#searchbar .form-control:hover, #searchbar .form-control:focus {border-bottom-color: @color-primary; }
+#searchbar .form-control:hover {background-color: @color-pale; color: #333}
+#searchbar .btn {padding: 8px; top: 5px; right: 4px;}
+#searchbar .btn:hover, #searchbar .btn:focus {color: @color-primary}
+#navbar li.nav-item-searchbar #searchbar > form {margin: 0!important}
+#header.compatible
+{
+    #searchbar {position: absolute; right: 0; top: auto; bottom: -43px; z-index: 1010; max-width: 160px;}
+}
+
+/* Navbar */
+.navbar
+{
+    border-bottom: 2px solid #ccc; 
+    border-radius: 0; 
+    font-weight: 500;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus,
+.navbar-brand:hover,
+.navbar-brand:focus
+{
+    color: @color-primary;
+    background-color: @color-pale;
+}
+
+.nav .caret {border-top-color: #666}
+.nav a:hover,
+.nav > li.open > a,
+.nav > li.open > a:hover,
+.nav > li.open > a:focus
+.nav > li > a:hover,
+.nav > li > a:focus {
+    .caret {
+        border-top-color: @color-primary;
+        border-bottom-color: @color-primary;
+    }
+}
+
+.navbar-nav > li.active > a,
+.navbar-nav > li.active > a:hover,
+.navbar-nav > li.active > a:focus,
+.navbar-nav > li.active > a:visited
+{
+    color: @color-primary;
+    box-shadow: inset 0 -2px 0 @color-primary;
+    margin-bottom: -2px;
+    padding: 11px 15px;
+    z-index: 10;
+}
+
+#navbar .nav > li.nav-item-searchbar {float: right}
+#navbar .nav > li.nav-item-searchbar #searchbar {padding: 0;}
+#navbar .nav > li.nav-item-searchbar #searchbar .form-control {margin-bottom: -2px; height: 42px;}
+#navbar .navbar-collapse {padding-right: 0;}
+
+@media (max-width: 767px)
+{
+    .navbar-nav {margin: 5px 0;}
+    body > .page-container {margin-top: 0;}
+    #header {margin-left: -10px; margin-right: -10px;}
+    #headTitle {padding: 0 10px!important;}
+    #header.compatible #searchbar {bottom: auto; top: 3px; left: 10px}
+    #searchbar .form-control {padding-top: 2px; padding-bottom: 2px; border: none; background-color: #fafafa; height: 24px;}
+    #searchbar .btn {top: 0; padding: 3px;}
+    #searchbar .form-control:hover {background-color: #fff}
+
+    .navbar {margin-left: -10px; margin-right: -10px;}
+}
+
+/* Form control */
+.form-control
+{
+    border-radius: 1px;
+    box-shadow: none;
+    &:focus, &:active
+    {
+        border-color: @color-primary;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@color-primary, 10%);
+    }
+}
+
+/* Dropdown */
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {background-color: @color-primary;}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {background-color: @color-pale; color: @color-primary;}
+
+/* Carousel */
+.carousel-control.left, .carousel-control.right {background-image: none}
+
+/* Table */
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {background-color: @color-pale}
+
+/* Special parts */
+#rightDockerBtn {border-radius: 1px}
+#go2top {border-radius: 0; background-color: #fff; font-size: 18px;}
+#footNav a:hover, #powerby a:hover {color: @color-primary}
+#powerby a:hover, #powerby:hover .icon-chanzhi > i, #powerby:hover .icon-chanzhi > i:before, #powerby:hover .icon-chanzhi > i:after {border-color: @color-primary;}
+
+/* Popover */
+.popover {border-radius: 0}
+
+/* Card */
+.card {box-shadow: none; border-radius: 1px; border-bottom-width: 2px}
+
+/* Blog */
+.m-blog #searchbar {bottom: auto}
+.m-blog #searchbar .form-control {background-color: #f5f5f5}
+.m-blog #pager {margin-bottom: 10px;}
+@media (max-width: 767px)
+{
+    .m-blog #searchbar {left: 12px}
+    #blogNav {margin-left: 0; margin-right: 0;}
+    #blogNav .navbar-nav > li > a {border-radius: 0}
+}

@@ -1,0 +1,9 @@
+.pager {margin: 0}
+.mgb-0{margin-bottom:0; border-bottom:none; border-radius:3px 3px 0 0;}
+.mgb-0 .panel-heading{margin-bottom:0; border-bottom:none; border-radius:3px 3px 0 0;}
+.comment-item{border-radius:0;}
+.panel-heading.content-heading{ background: rgb(249, 249, 249); border-radius:0;}
+.panel-heading.reply-heading{ background: rgb(249, 249, 249); border-radius:0;}
+.panel > .panel-heading.reply-heading > a{ color:#39b3d7;}
+.panel > .comment-container{padding-top:20px;}
+.panel > .comment-container > .panel{border-left: 0; border-right:0;}

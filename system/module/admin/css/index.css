@@ -1,0 +1,8 @@
+.row.summary{padding-top: 15px;}
+.table, .row.panel{margin: 0;}
+.panel-body{padding: 0; height: 180px;}
+.panel-body.shortcutGroup{padding-top: 35px;}
+.shortcutGroup > a{margin: 10px 20px; font-size: 13px;}
+@media(min-width:768px){#shortcutBox{margin-top: 20px;}}
+@media(min-width:1200px){#shortcutBox{margin-top: 30px;}}
+@media(min-width:1400px){#shortcutBox{margin-top: 60px;}}
