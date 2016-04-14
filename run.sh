@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[ $DEBUG ] && set -x
+
 Dirs="system/config system/module system/tmp www/data www/template"
 PermanentDir="/data"
 AppDir="/app"
