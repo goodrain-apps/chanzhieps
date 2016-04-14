@@ -12,7 +12,7 @@ UpgradeFile="${AppDir}/www/upgrade.php"
 for d in $Dirs
 do
   # 检测是否包含子目录
-  subdir=$(dirname $d)
+  subdir=`dirname $d`
 
   if [ ! -d ${PermanentDir}/${d} ] ;then
   
