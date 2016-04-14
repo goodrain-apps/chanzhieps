@@ -83,4 +83,4 @@
 # 版权说明
 本项目同步更新 [蝉知](http://www.chanzhi.org/) 官方发布的开源版本，并适配好雨云的一键部署 功能。
 
-[蝉知](http://www.chanzhi.org/) 开源版本 版权归[青岛易软天创网络科技有限公司](http://www.cnezsoft.com/)所有并遵循原软件的[版权规则](https://github.com/easysoft/zentaopms/blob/master/COPYING)
+[蝉知](http://www.chanzhi.org/) 开源版本 版权归[青岛易软天创网络科技有限公司](http://www.cnezsoft.com/)所有并遵循原软件的[版权规则](https://github.com/goodrain-apps/chanzhieps/blob/master/system/doc/LICENSE)
